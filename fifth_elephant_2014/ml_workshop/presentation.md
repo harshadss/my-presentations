@@ -58,7 +58,7 @@ Closing talk on art
 
 ---
 
-# What process ?
+# What Process ?
 
 ## A real world problem
 
@@ -106,7 +106,7 @@ us what should do next time. Can you automate that insight generation ?
 
 ## Dataset background
 
-https://github.com/harshadss/my-presentations
+[https://github.com/harshadss/my-presentations](https://github.com/harshadss/my-presentations)
 
 * Bank marketing campaign data (S. Moro, P. Cortez and P. Rita, Jun 2014)
 
@@ -128,25 +128,35 @@ https://github.com/harshadss/my-presentations
 
     !python
     import numpy as np
+
     import pandas as pd
+
     bank_file = './bank-full.csv'
+
     ind = pd.read_csv(bank_file, header = 0, delimiter = ';')
 
-## Handshake with data!
+
+## Handshake with data
 
     !python
-    type(ind) # Is it pandas Data Frame ?
+
     ind.shape # How many rows ? How many columns ?
+
     ind.columns # What are the names of columns ?
+
     ind.dtypes # Are the columns read correctly ?
 
 ## Checking few observations
 
     !python
     ind.head()
+
     ind.tail() 
+
     ind[1:10] # Only does rows subsetting
+
     ind.ix[ 1:5, 1:2] # ix is special format for rows + column subsetting
+
     ind.ix[ 1:5, ['marital', 'y'] ] # Can use a list of col names
 
 # Presenter Notes
@@ -159,27 +169,33 @@ https://github.com/harshadss/my-presentations
 
 ---
 
-# Drilling down
+# Drilling Down
 
 ## Check outcome variable
 
     !python
     ind['y'].describe() # Is it categorical or numeric ?
+
     ind['y'].unique() # How many unique values ?
+
     ind['y'].value_counts() # Count by unique values
 
 ## Checking numeric variables
 
     !python
     ind['age'].mean()
+
     ind['age'].median()
+
     ind['age'].describe()
 
 ## Checking numeric variable with skewness
 
     !python
     ind['balance'].mean()
+
     ind['balance'].median()
+
     ind['balance'].describe()
 
 # Presenter Notes
@@ -191,7 +207,7 @@ https://github.com/harshadss/my-presentations
 
 ---
 
-# Dissecting single variable
+# Dissecting Single Variable
 
 ## Quantiles/Percentiles
 
@@ -323,11 +339,10 @@ Information rarely useful as-is, need to transform
     ind = ind[ind.balance <= 13000 ] # Uses broadcasting
     ind.shape # How many left now ?
 
-## Missing Data strategies
+## Missing data strategies
 
-* Replace with median of column
-* Replace with mean of column
-* Replace with zero if count ?
+* Replace with median/mean of column
+* Replace with zero
 * Drop column if more than 30%-40% data missing
 * Convert to bins and keep missing as separate bin
 
@@ -342,7 +357,7 @@ Information rarely useful as-is, need to transform
 
 # Feature Engineering
 
-## Why and How ?
+## Why and how ?
 
 * Looking at same information from different view
 * Helps treat non-linearities, too many categories
@@ -352,15 +367,20 @@ Information rarely useful as-is, need to transform
 
     !python
     ind['life_stage'] = ind.apply(lambda x: x['age_binned'] + ' & ' + x['marital'], axis = 1)
+
     ind['life_stage'].value_counts()
 
 ## Creating a ratio variable of balance to age
 
     !python
-    ind['balance_by_age'] = (ind['balance'] + 1.0)/(ind['age'])
+    ind['balance_by_age'] = np.log(ind['balance'] + 10000)/(ind['age'])
+
     balance_by_age_labels = ['very low', 'low', 'medium', 'high', 'very high']
+
     ind['balance_by_age_binned'] = pd.qcut(ind['balance_by_age'], 5, labels = balance_by_age_labels)
+
     gb_bal_by_age = ind['y_dummy'].groupby(ind['balance_by_age_binned'] )
+
     gb_bal_by_age.mean().sort().order() # This is a huge insight again!
 
 # Presenter Notes
@@ -373,6 +393,329 @@ Information rarely useful as-is, need to transform
 
 # Modeling
 
-## What is modeling
+## What is modeling ?
+
+> g(Y) = f(**X**)
+
+## Model types
+
+* Supervised learning
+* Unsupervised learning
+* Semi-supervised learning
+* Re-inforcement learning
+
+# Presenter Notes
+
+* Endeavour to understand world
+* X is matrix, Y is vector
+* Supervised : guided by past outcomes
+* Not covering semi and re-inforcement
+
+---
+
+# Stats Vs. ML Culture
+
+1. Stats Culture
+    1. Focus on 'why this model'
+    2. Goodness of fit, hypothesis testing
+    3. Regression models, survival analysis
+    4. Gives basic theory
+2. AI / ML Culture
+    1. Focus on 'good predictions'
+    2. Cross validations, ensemble of models, bias-variance
+    3. neural networks, tree based models
+
+---
+
+# Feature and Target Data
+
+## Creating dummies
+
+    !python
+    feature_names = ind[['life_stage', 'balance_by_age_binned', 'education', 'housing', 'loan', 'default']]
+
+    # For every var, get dummies and eliminate one column
+    df_list = [pd.get_dummies(ind[var_name], prefix = var_name).ix[:, 1 : ] for var_name in feature_names]
+
+    feature_mat = pd.concat(df_list, axis = 1) # axis = 1 is important!
+
+    feature_mat.shape # How many columns?
+
+## Create target variable
+
+    !python
+    target = ind['y_dummy'] # Selected a numeric dummy variable
+
+---
+
+# Introduction to Random Forests
+
+## Decision trees
+
+* Focus on predictions, black box models
+* Which variable achieves maximum separation ?
+* Problem with DTrees : Overfitting
+
+## Random forests
+
+* Fit multiple DTrees with random samples of data
+* Introduce randomness in variable selection
+* Prediction by majority vote
+
+# Presenter Notes
+* Lot of courses cover regression
+* Informal intro to random forests
+* ENsembles :Focus on 'what data says' rather than modeling natural process
+* DTree : Greedily select vars which achieve separation
+* Site edwin chen
+* Example : give data to friend, she asks questions looking at data, gives outcome
+
+---
+
+# Fitting and Simple Evaluation
+
+## Fit 
+
+    !python
+    from sklearn.ensemble import RandomForestClassifier
+
+    rf = RandomForestClassifier()
+
+    model = rf.fit(feature_mat, target.values)
+
+    raw_feature_importance = model.feature_importances_.tolist()
+
+    feature_importance = [round(val * 100.0, 2) for val in raw_feature_importance]
+
+    print zip(feature_mat.columns, feature_importance)
+
+## Simple Evaluation
+
+    !python
+    model.score(feature_mat, target.values) # Wow ! But wait..
+
+---
+
+# Evaluation
+
+## Importance of evaluation
+
+* Right metric
+* Metrics for classification and regressions
+* Right Measurement
+
+## Evaluating classifiers
+
+* Precision = (True Positives)/(P)
+* Recall = (True Positives)/(P')
+
+![Confusion Matrix](resources/two_way_table.png)
+
+---
+
+# Evaluation (continued..)
+
+    !python
+    from sklearn.metrics import classification_report
+
+    print(classification_report(model.predict(feature_mat), target.values))
+
+# Presenter Notes
+
+* Precision : predicted one, how many actually are ?
+* Recall : of all ones, how many covered ?
+* Cite Andrew Ngs course for better details
 
 
+---
+
+# Evaluation and Bias-Variance
+
+## Bias Vs. Variance Problem
+
+* How does the problem arise ?
+
+* How is it solved in classical regression models ?
+
+* How Random Forest approaches the problem ?
+
+## Key Idea
+
+Test on dataset with no degrees of freedom
+
+# Presenter Notes
+* Poor fit on train data : features lacking, wrong way to model problem ?
+* Variance : student mugging up on exam
+* Model fitting is optimization routine : so need degree of freedom = 0
+* On train data : I can keep tuning params to achieve good fit
+
+
+---
+
+# Skewed Data in Real World
+
+## Asymmetric Costs
+
+* Predicting likely respondents for marketing campaigns
+
+* Public Relations Disaster : Target pregnancy prediction model
+
+* Predicting likelihood of nuclear attack and launch pre-emptive strike ?
+
+--- 
+
+# Iteration/Better Model
+
+    !python
+    from sklearn.cross_validation import train_test_split
+
+    train_feature, test_feature, train_target, test_target = train_test_split(feature_mat, target.values, test_size = 0.3, random_state = 42)
+
+    wts = np.array([5 if y == 1 else 1 for y in train_target]) # Weights  
+
+    better_rf = RandomForestClassifier(min_samples_leaf = 10, n_jobs = -1, verbose = 1)
+
+    better_model = better_rf.fit(train_feature, train_target, sample_weight = wts)
+
+    print(classification_report(better_model.predict(train_feature), train_target) )
+
+    print(classification_report(model.predict(test_feature), test_target) )
+
+## Inference
+
+* Can trade off precision and recall
+* Default probability threshold can be changed
+* Marketing campaigns : use lift as a metric
+
+# Presenter Notes
+
+* How handled asymmetric : weights
+* How handled overfit : min samples (should be higher)
+* Marketing campaigns : use sorted list, how much effort is saved etc.
+
+---
+
+# Introduction to Unsupervised Learning
+
+## Idea
+
+* Unlabelled data
+* Trying to find structure
+
+## Applications
+
+* Customer segmentation
+* Topic based classification of documents
+* Reducing dimensionality of genomic datasets
+
+---
+
+# K-mean clustering
+
+## How does it work ?
+
+* Distance as a measure of similarity
+* Randomly partition
+* Re-calculate centroids, re-assign
+
+## Customer segmentation on data
+
+    !python
+    from sklearn import preprocessing
+
+    lookup = {'yes' : 1, 'no' : 0}
+
+    ind['housing_dummy'] = ind['housing'].map(lamda x: lookup[x])
+
+    econ_data = ind[['balance_by_age', 'housing_dummy']].as_matrix()
+
+    econ_data_scaled = preprocessing.scale(econ_data)
+
+    from sklearn import cluster
+
+    k = 3 # Conventional wisdom of low-middle-wealthy class
+
+    kmeans = cluster.KMeans(n_clusters = k)
+
+    kmeans.fit(econ_data_scaled)
+
+    predicted = kmeans.predict(econ_data_scaled)
+
+    plt.scatter(econ_data_scaled[:, 0], econ_data_scaled[:, 1], c = y_pred)
+
+# Presenter Notes
+
+* Task : clusters based on socio-economic condition
+* Trivial example : only two vars help vizualize
+* Not good way : MIXING linear and binary var.
+* Binary vars have different variance
+
+---
+
+# Curse of Unstructured Data
+
+## Examples
+
+* Face recognition
+
+* Spam filtering, news article recommendations
+
+* Detect motion in video feed for security concerns 
+
+## Problems
+
+* Preprocessing is harder
+
+* Data model is not easy
+
+---
+
+# Vector Space Representation
+
+![Vector Space Model](resources/vector_space_model.png)
+
+## Representations
+
+* Text, Document mining ?
+
+* Image data ?
+
+* Video data ?
+
+# Presenter Notes
+
+* Why is maths good : abstraction
+* ML needs vector space : distance, similarity etc
+* Text : documents as points
+* Image : pixels as axis , NON-LINEAR COMBOS Neural networks
+* Videos : I'm not sure, time varying data , 4D space
+
+---
+
+# Real World Tips
+
+* Avoiding GIGO approach
+
+* Importance of data model and feature engineering
+
+* Fallacy of anticausal systems
+
+* Fallacy of automated no-brains machine learning
+
+* Means (big data tools) Vs. insights
+
+---
+
+# Recap
+
+* Define objective
+* Get data 
+* Explore
+* Model
+* Evaluate
+* Iterate
+* Validate
+
+---
+
+# Questions ??

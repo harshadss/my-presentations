@@ -28,14 +28,14 @@
     <title>Real World Machine Learning</title>
     <!-- Styles -->
     
-    <link rel="stylesheet" media="print" href="file:///usr/local/lib/python2.7/dist-packages/landslide/themes/default/css/print.css">
-    <link rel="stylesheet" media="screen, projection" href="file:///usr/local/lib/python2.7/dist-packages/landslide/themes/default/css/screen.css">
+    <link rel="stylesheet" media="print" href="file:///home/harshad.saykhedkar/projects/my_open_source/presentations/fifth_elephant_2014/ml_workshop/theme/css/print.css">
+    <link rel="stylesheet" media="screen, projection" href="file:///home/harshad.saykhedkar/projects/my_open_source/presentations/fifth_elephant_2014/ml_workshop/theme/css/screen.css">
     
     
     <!-- /Styles -->
     <!-- Javascripts -->
     
-    <script type="text/javascript" src="file:///usr/local/lib/python2.7/dist-packages/landslide/themes/default/js/slides.js"></script>
+    <script type="text/javascript" src="file:///home/harshad.saykhedkar/projects/my_open_source/presentations/fifth_elephant_2014/ml_workshop/theme/js/slides.js"></script>
     
     
     <!-- /Javascripts -->
@@ -70,7 +70,7 @@
             </aside>
             
             <aside class="page_number">
-              1/2
+              1/32
             </aside>
           </footer>
         </div>
@@ -81,8 +81,18 @@
         <div class="slide">
           <div class="inner">
             
+            <header><h1>About Me...</h1></header>
             
-            <section><p>Hello, World!</p></section>
+            
+            <section><p>Harshad</p>
+<ul>
+<li>
+<p>Senior Data Scientist @ SOKRATI</p>
+</li>
+<li>
+<p>Spent last 4 years trying to understand machine learning</p>
+</li>
+</ul></section>
             
           </div>
           <div class="presenter_notes">
@@ -98,7 +108,1521 @@
             </aside>
             
             <aside class="page_number">
-              2/2
+              2/32
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Workshop Agenda</h1></header>
+            
+            
+            <section><p>Machine learning is <em>not only</em> about mathematical algorithms or tools or 
+vizualizations or business knowledge.</p>
+<blockquote>
+<p>You cannot play a symphony alone, it takes an orchestra</p>
+</blockquote>
+<p>It involves balance of,</p>
+<ol>
+<li>Science</li>
+<li>Process</li>
+<li>Engineering</li>
+<li>Art</li>
+</ol>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+              <p>ML : popular, identified with extremely diverse set of ideas
+Sometimes we miss the forest for the trees
+Books and courses focus on science.
+Tool and library developers focus on engineering
+A real world ML problem : needs knowledge of each aspect
+Workshop and conference themed around the 4 aspects
+Workshop later on science (R) and engineering (solr, aerospike)
+My talk on some aspects of engineering at conference, many other talks
+Closing talk on art</p>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              3/32
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Workshop Agenda</h1></header>
+            
+            
+            <section><h2>Focus on process of machine learning</h2>
+<ul>
+<li>Taking a real world challenging problem</li>
+<li>Use science, tools and some intuition</li>
+<li>Create a usable solution for the problem</li>
+</ul>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+              <ul>
+<li>Process sounds bureaucratic, but useful</li>
+<li>mixture of curiosity and common sense</li>
+<li>driven from past experiences of community</li>
+</ul>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              4/32
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>What Process ?</h1></header>
+            
+            
+            <section><h2>A real world problem</h2>
+<blockquote>
+<p>We want to sell a product to customers through telemarketing. The last time we did 
+a carpet bombing exercise. Here are bunch of data point from the effort. Tell
+us what should do next time. Can you automate that insight generation ?</p>
+</blockquote>
+<h2>Flurry of questions...</h2>
+<ul>
+<li>Where to start ?</li>
+<li>What am I supposed to model ?</li>
+<li>What algorithm is better suited for this ?</li>
+<li>Do we have too much data ? How do I know that ?</li>
+<li>Do we have too little data ? How do I know that ?</li>
+</ul>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+              <ul>
+<li>Typical questions</li>
+<li>Process : systematic way of answering questions</li>
+<li>Bottom line : useful and practical</li>
+</ul>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              5/32
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Typical Process</h1></header>
+            
+            
+            <section><ul>
+<li>Define objective</li>
+<li>Get data </li>
+<li>Explore</li>
+<li>Model</li>
+<li>Evaluate</li>
+<li>Iterate</li>
+<li>Validate</li>
+</ul>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+              <ul>
+<li>
+<p>Derived through experience</p>
+</li>
+<li>
+<p>Known by other names (CRISP-DM etc.)</p>
+</li>
+<li>
+<p>Not covering get data , <em>conference</em></p>
+</li>
+</ul>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              6/32
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Objective</h1></header>
+            
+            
+            <section><h2>Dataset background</h2>
+<p><a href="https://github.com/harshadss/my-presentations">https://github.com/harshadss/my-presentations</a></p>
+<ul>
+<li>
+<p>Bank marketing campaign data (S. Moro, P. Cortez and P. Rita, Jun 2014)</p>
+</li>
+<li>
+<p>Popular business problem</p>
+</li>
+<li>
+<p>Can be generalized to many other domains</p>
+</li>
+</ul>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+              <ul>
+<li>
+<p>Those who do not have : download from github or UCI ML repo</p>
+</li>
+<li>
+<p>Portugese bank, wants to sell deposit products, generalize to any marketing</p>
+</li>
+</ul>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              7/32
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Start!</h1></header>
+            
+            
+            <section><h2>Read the data</h2>
+<div class="highlight"><pre><span class="lineno">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="lineno">2</span> 
+<span class="lineno">3</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="lineno">4</span> 
+<span class="lineno">5</span> <span class="n">bank_file</span> <span class="o">=</span> <span class="s">&#39;./bank-full.csv&#39;</span>
+<span class="lineno">6</span> 
+<span class="lineno">7</span> <span class="n">ind</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">bank_file</span><span class="p">,</span> <span class="n">header</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">delimiter</span> <span class="o">=</span> <span class="s">&#39;;&#39;</span><span class="p">)</span>
+</pre></div>
+
+<h2>Handshake with data</h2>
+<div class="highlight"><pre><span class="lineno">1</span> <span class="n">ind</span><span class="o">.</span><span class="n">shape</span> <span class="c"># How many rows ? How many columns ?</span>
+<span class="lineno">2</span> 
+<span class="lineno">3</span> <span class="n">ind</span><span class="o">.</span><span class="n">columns</span> <span class="c"># What are the names of columns ?</span>
+<span class="lineno">4</span> 
+<span class="lineno">5</span> <span class="n">ind</span><span class="o">.</span><span class="n">dtypes</span> <span class="c"># Are the columns read correctly ?</span>
+</pre></div>
+
+<h2>Checking few observations</h2>
+<div class="highlight"><pre><span class="lineno">1</span> <span class="n">ind</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="lineno">2</span> 
+<span class="lineno">3</span> <span class="n">ind</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+<span class="lineno">4</span> 
+<span class="lineno">5</span> <span class="n">ind</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span> <span class="c"># Only does rows subsetting</span>
+<span class="lineno">6</span> 
+<span class="lineno">7</span> <span class="n">ind</span><span class="o">.</span><span class="n">ix</span><span class="p">[</span> <span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="c"># ix is special format for rows + column subsetting</span>
+<span class="lineno">8</span> 
+<span class="lineno">9</span> <span class="n">ind</span><span class="o">.</span><span class="n">ix</span><span class="p">[</span> <span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="p">[</span><span class="s">&#39;marital&#39;</span><span class="p">,</span> <span class="s">&#39;y&#39;</span><span class="p">]</span> <span class="p">]</span> <span class="c"># Can use a list of col names</span>
+</pre></div>
+
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+              <ul>
+<li>First hassle : read data, delimiters, can be other sources like db</li>
+<li>Top level view of data : shape, type of variables, dimensions</li>
+<li>Explain vars</li>
+<li>If rows too small, if columns &gt; rows</li>
+<li>mental scan : what the cols are, types (demog, socio-economic)</li>
+</ul>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              8/32
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Drilling Down</h1></header>
+            
+            
+            <section><h2>Check outcome variable</h2>
+<div class="highlight"><pre><span class="lineno">1</span> <span class="n">ind</span><span class="p">[</span><span class="s">&#39;y&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span> <span class="c"># Is it categorical or numeric ?</span>
+<span class="lineno">2</span> 
+<span class="lineno">3</span> <span class="n">ind</span><span class="p">[</span><span class="s">&#39;y&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span> <span class="c"># How many unique values ?</span>
+<span class="lineno">4</span> 
+<span class="lineno">5</span> <span class="n">ind</span><span class="p">[</span><span class="s">&#39;y&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span> <span class="c"># Count by unique values</span>
+</pre></div>
+
+<h2>Checking numeric variables</h2>
+<div class="highlight"><pre><span class="lineno">1</span> <span class="n">ind</span><span class="p">[</span><span class="s">&#39;age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="lineno">2</span> 
+<span class="lineno">3</span> <span class="n">ind</span><span class="p">[</span><span class="s">&#39;age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+<span class="lineno">4</span> 
+<span class="lineno">5</span> <span class="n">ind</span><span class="p">[</span><span class="s">&#39;age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+
+<h2>Checking numeric variable with skewness</h2>
+<div class="highlight"><pre><span class="lineno">1</span> <span class="n">ind</span><span class="p">[</span><span class="s">&#39;balance&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="lineno">2</span> 
+<span class="lineno">3</span> <span class="n">ind</span><span class="p">[</span><span class="s">&#39;balance&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+<span class="lineno">4</span> 
+<span class="lineno">5</span> <span class="n">ind</span><span class="p">[</span><span class="s">&#39;balance&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+              <ul>
+<li>Drill down to individual columns</li>
+<li>If mean and median close : no skewness</li>
+<li>Balance : skewed, outliers</li>
+<li>Tip : Man made variables more likely to have outliers, use median to summarize</li>
+</ul>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              9/32
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Dissecting Single Variable</h1></header>
+            
+            
+            <section><h2>Quantiles/Percentiles</h2>
+<p>Percentiles represent percentage positions in sorted data.</p>
+<blockquote>
+<p>99th percentile = 10 indicates that 99 percent of data points are less than 
+  or equal to 10</p>
+</blockquote>
+<p>Percentiles are excellent way of summarizing distribution of data</p>
+<div class="highlight"><pre><span class="lineno">1</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+<span class="lineno">2</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span> <span class="c"># arange is not right inclusive</span>
+<span class="lineno">3</span> <span class="n">dist</span> <span class="o">=</span> <span class="n">ind</span><span class="p">[</span><span class="s">&#39;balance&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">))</span> <span class="c"># Skewed distributions ?</span>
+<span class="lineno">4</span> <span class="n">dist</span>
+<span class="lineno">5</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">pl</span>
+<span class="lineno">6</span> <span class="n">pl</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dist</span><span class="p">)</span>
+<span class="lineno">7</span> <span class="n">pl</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+<h2>Check outliers on lower end</h2></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              10/32
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Introduction to Data Transformations</h1></header>
+            
+            
+            <section><p>Information rarely useful as-is, need to transform</p>
+<div class="highlight"><pre><span class="lineno">1</span> <span class="n">y_n_lookup</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;yes&#39;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">&#39;no&#39;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
+<span class="lineno">2</span> <span class="n">ind</span><span class="p">[</span><span class="s">&#39;y_dummy&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ind</span><span class="p">[</span><span class="s">&#39;y&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">y_n_lookup</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="p">)</span>
+<span class="lineno">3</span> <span class="n">ind</span><span class="p">[</span><span class="s">&#39;y_dummy&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+
+<h2>How does it work ?</h2>
+<ul>
+<li>
+<p>Lambdas : anonymous functions</p>
+</li>
+<li>
+<p>Create a map holding transformation</p>
+</li>
+<li>
+<p>map applies the transformation to every row</p>
+</li>
+</ul>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+              <ul>
+<li>
+<p>Transformations are very important, Need to quickly identify transformations</p>
+</li>
+<li>
+<p>What is being done : map phase of map-reduce in memory</p>
+</li>
+<li>
+<p>Lambda is anonymous function : avoids writing separate function</p>
+</li>
+</ul>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              11/32
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Initial Line of Attack</h1></header>
+            
+            
+            <section><h2>Set out hypothesis/quesions</h2>
+<ul>
+<li>
+<p>Does age matter ?</p>
+</li>
+<li>
+<p>Does age matter in combination with marital status ?</p>
+</li>
+<li>
+<p>Do variables like balance, loan, default matter ?</p>
+</li>
+</ul>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+              <ul>
+<li>
+<p>Explain line of attack : demog, socio-economic vars</p>
+</li>
+<li>
+<p>Essentially about validating common sense/gut feeling</p>
+</li>
+<li>
+<p>Deposits are risk free products : should young people buy it ? not clear</p>
+</li>
+<li>
+<p>Motivate need of grouping, aggregation</p>
+</li>
+</ul>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              12/32
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Grouping and Aggregation</h1></header>
+            
+            
+            <section><p><img alt="Split Apply Combine" src="file:///home/harshad.saykhedkar/projects/my_open_source/presentations/fifth_elephant_2014/ml_workshop/resources/split_apply_combine1.png" /></p>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+              <ul>
+<li>
+<p>Concept similar to mapreduce</p>
+</li>
+<li>
+<p>Example of marital status : divide by marital status, average, combine</p>
+</li>
+</ul>
+<h1>Grouping and Aggregation</h1>
+<h2>Does marital status affect outcome ?</h2>
+<div class="highlight"><pre><span class="lineno">1</span> <span class="n">ind</span><span class="p">[</span><span class="s">&#39;marital&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<span class="lineno">2</span> <span class="n">gb_marital</span> <span class="o">=</span> <span class="n">ind</span><span class="p">[</span><span class="s">&#39;y_dummy&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">ind</span><span class="p">[</span><span class="s">&#39;marital&#39;</span><span class="p">])</span>
+<span class="lineno">3</span> <span class="n">gb_marital</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+
+<h2>Does age affect outcome with marital status ?</h2>
+<div class="highlight"><pre><span class="lineno">1</span> <span class="n">age_group_names</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;Young&#39;</span><span class="p">,</span> <span class="s">&#39;Lower Middle&#39;</span><span class="p">,</span> <span class="s">&#39;Middle&#39;</span><span class="p">,</span> <span class="s">&#39;Senior&#39;</span><span class="p">]</span>
+<span class="lineno">2</span> <span class="n">ind</span><span class="p">[</span><span class="s">&#39;age_binned&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">qcut</span><span class="p">(</span><span class="n">ind</span><span class="p">[</span><span class="s">&#39;age&#39;</span><span class="p">],</span> <span class="mi">4</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">age_group_names</span><span class="p">)</span>
+<span class="lineno">3</span> <span class="n">ind</span><span class="p">[</span><span class="s">&#39;age_binned&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<span class="lineno">4</span> <span class="n">gb_marital_age</span> <span class="o">=</span> <span class="n">ind</span><span class="p">[</span><span class="s">&#39;y_dummy&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">ind</span><span class="p">[</span><span class="s">&#39;marital&#39;</span><span class="p">],</span> <span class="n">ind</span><span class="p">[</span><span class="s">&#39;age_binned&#39;</span><span class="p">]</span> <span class="p">)</span>
+<span class="lineno">5</span> <span class="n">gb_marital_age</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="c"># Oops!</span>
+<span class="lineno">6</span> <span class="n">gb_marital_age</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span>
+<span class="lineno">7</span> <span class="n">gb_marital_age</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span> <span class="c"># Check if enough samples in each group</span>
+</pre></div>
+
+<h1>Presenter Notes</h1>
+<ul>
+<li>
+<p>Meaty part</p>
+</li>
+<li>
+<p>Even if you have large # of vars : youd have some gut feel on what works</p>
+</li>
+<li>
+<p>Stark difference by age + marital status</p>
+</li>
+</ul>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              13/32
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Outlier Treatments and Missing Data</h1></header>
+            
+            
+            <section><h2>Detecting outliers</h2>
+<div class="highlight"><pre><span class="lineno">1</span> <span class="n">top_end</span> <span class="o">=</span> <span class="n">ind</span><span class="p">[</span><span class="s">&#39;balance&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.9</span><span class="p">,</span> <span class="mf">1.01</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">))</span> <span class="c"># Top 10 </span>
+<span class="lineno">2</span> <span class="n">top_end</span>
+<span class="lineno">3</span> <span class="n">pl</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">top_end</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">top_end</span><span class="o">.</span><span class="n">values</span><span class="p">)</span> <span class="c"># Accesing index</span>
+<span class="lineno">4</span> <span class="n">pl</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="lineno">5</span> <span class="n">pl</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">top_end</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">top_end</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<span class="lineno">6</span> <span class="n">pl</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.99</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">20000</span><span class="p">])</span>
+<span class="lineno">7</span> <span class="n">pl</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c"># Now a much better plot</span>
+</pre></div>
+
+<h2>Removing outliers</h2>
+<div class="highlight"><pre><span class="lineno">1</span> <span class="n">ind</span> <span class="o">=</span> <span class="n">ind</span><span class="p">[</span><span class="n">ind</span><span class="o">.</span><span class="n">balance</span> <span class="o">&lt;=</span> <span class="mi">13000</span> <span class="p">]</span> <span class="c"># Uses broadcasting</span>
+<span class="lineno">2</span> <span class="n">ind</span><span class="o">.</span><span class="n">shape</span> <span class="c"># How many left now ?</span>
+</pre></div>
+
+<h2>Missing data strategies</h2>
+<ul>
+<li>Replace with median/mean of column</li>
+<li>Replace with zero</li>
+<li>Drop column if more than 30%-40% data missing</li>
+<li>Convert to bins and keep missing as separate bin</li>
+</ul>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+              <ul>
+<li>
+<p>Why outliers removed : algos are sensitive (e.g. kmeans)</p>
+</li>
+<li>
+<p>Missing data is a reality, cannot keep dropping columns</p>
+</li>
+</ul>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              14/32
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Feature Engineering</h1></header>
+            
+            
+            <section><h2>Why and how ?</h2>
+<ul>
+<li>Looking at same information from different view</li>
+<li>Helps treat non-linearities, too many categories</li>
+<li>Often differentiator between good and great results</li>
+</ul>
+<h2>Creating a 'life stage' variable</h2>
+<div class="highlight"><pre><span class="lineno">1</span> <span class="n">ind</span><span class="p">[</span><span class="s">&#39;life_stage&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ind</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s">&#39;age_binned&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s">&#39; &amp; &#39;</span> <span class="o">+</span> <span class="n">x</span><span class="p">[</span><span class="s">&#39;marital&#39;</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="lineno">2</span> 
+<span class="lineno">3</span> <span class="n">ind</span><span class="p">[</span><span class="s">&#39;life_stage&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+
+<h2>Creating a ratio variable of balance to age</h2>
+<div class="highlight"><pre><span class="lineno">1</span> <span class="n">ind</span><span class="p">[</span><span class="s">&#39;balance_by_age&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">ind</span><span class="p">[</span><span class="s">&#39;balance&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="mi">10000</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">ind</span><span class="p">[</span><span class="s">&#39;age&#39;</span><span class="p">])</span>
+<span class="lineno">2</span> 
+<span class="lineno">3</span> <span class="n">balance_by_age_labels</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;very low&#39;</span><span class="p">,</span> <span class="s">&#39;low&#39;</span><span class="p">,</span> <span class="s">&#39;medium&#39;</span><span class="p">,</span> <span class="s">&#39;high&#39;</span><span class="p">,</span> <span class="s">&#39;very high&#39;</span><span class="p">]</span>
+<span class="lineno">4</span> 
+<span class="lineno">5</span> <span class="n">ind</span><span class="p">[</span><span class="s">&#39;balance_by_age_binned&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">qcut</span><span class="p">(</span><span class="n">ind</span><span class="p">[</span><span class="s">&#39;balance_by_age&#39;</span><span class="p">],</span> <span class="mi">5</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">balance_by_age_labels</span><span class="p">)</span>
+<span class="lineno">6</span> 
+<span class="lineno">7</span> <span class="n">gb_bal_by_age</span> <span class="o">=</span> <span class="n">ind</span><span class="p">[</span><span class="s">&#39;y_dummy&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">ind</span><span class="p">[</span><span class="s">&#39;balance_by_age_binned&#39;</span><span class="p">]</span> <span class="p">)</span>
+<span class="lineno">8</span> 
+<span class="lineno">9</span> <span class="n">gb_bal_by_age</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span><span class="o">.</span><span class="n">order</span><span class="p">()</span> <span class="c"># This is a huge insight again!</span>
+</pre></div>
+
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+              <ul>
+<li>FE is <em>the</em> differentiator</li>
+<li>Making variables useful</li>
+<li>Often the black magic/fun part of ML</li>
+</ul>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              15/32
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Modeling</h1></header>
+            
+            
+            <section><h2>What is modeling ?</h2>
+<blockquote>
+<p>g(Y) = f(<strong>X</strong>)</p>
+</blockquote>
+<h2>Model types</h2>
+<ul>
+<li>Supervised learning</li>
+<li>Unsupervised learning</li>
+<li>Semi-supervised learning</li>
+<li>Re-inforcement learning</li>
+</ul>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+              <ul>
+<li>Endeavour to understand world</li>
+<li>X is matrix, Y is vector</li>
+<li>Supervised : guided by past outcomes</li>
+<li>Not covering semi and re-inforcement</li>
+</ul>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              16/32
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Stats Vs. ML Culture</h1></header>
+            
+            
+            <section><ol>
+<li>Stats Culture<ol>
+<li>Focus on 'why this model'</li>
+<li>Goodness of fit, hypothesis testing</li>
+<li>Regression models, survival analysis</li>
+<li>Gives basic theory</li>
+</ol>
+</li>
+<li>AI / ML Culture<ol>
+<li>Focus on 'good predictions'</li>
+<li>Cross validations, ensemble of models, bias-variance</li>
+<li>neural networks, tree based models</li>
+</ol>
+</li>
+</ol></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              17/32
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Feature and Target Data</h1></header>
+            
+            
+            <section><h2>Creating dummies</h2>
+<div class="highlight"><pre><span class="lineno">1</span> <span class="n">feature_names</span> <span class="o">=</span> <span class="n">ind</span><span class="p">[[</span><span class="s">&#39;life_stage&#39;</span><span class="p">,</span> <span class="s">&#39;balance_by_age_binned&#39;</span><span class="p">,</span> <span class="s">&#39;education&#39;</span><span class="p">,</span> <span class="s">&#39;housing&#39;</span><span class="p">,</span> <span class="s">&#39;loan&#39;</span><span class="p">,</span> <span class="s">&#39;default&#39;</span><span class="p">]]</span>
+<span class="lineno">2</span> 
+<span class="lineno">3</span> <span class="c"># For every var, get dummies and eliminate one column</span>
+<span class="lineno">4</span> <span class="n">df_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">ind</span><span class="p">[</span><span class="n">var_name</span><span class="p">],</span> <span class="n">prefix</span> <span class="o">=</span> <span class="n">var_name</span><span class="p">)</span><span class="o">.</span><span class="n">ix</span><span class="p">[:,</span> <span class="mi">1</span> <span class="p">:</span> <span class="p">]</span> <span class="k">for</span> <span class="n">var_name</span> <span class="ow">in</span> <span class="n">feature_names</span><span class="p">]</span>
+<span class="lineno">5</span> 
+<span class="lineno">6</span> <span class="n">feature_mat</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">df_list</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="c"># axis = 1 is important!</span>
+<span class="lineno">7</span> 
+<span class="lineno">8</span> <span class="n">feature_mat</span><span class="o">.</span><span class="n">shape</span> <span class="c"># How many columns?</span>
+</pre></div>
+
+<h2>Create target variable</h2>
+<div class="highlight"><pre><span class="lineno">1</span> <span class="n">target</span> <span class="o">=</span> <span class="n">ind</span><span class="p">[</span><span class="s">&#39;y_dummy&#39;</span><span class="p">]</span> <span class="c"># Selected a numeric dummy variable</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              18/32
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Introduction to Random Forests</h1></header>
+            
+            
+            <section><h2>Decision trees</h2>
+<ul>
+<li>Focus on predictions, black box models</li>
+<li>Which variable achieves maximum separation ?</li>
+<li>Problem with DTrees : Overfitting</li>
+</ul>
+<h2>Random forests</h2>
+<ul>
+<li>Fit multiple DTrees with random samples of data</li>
+<li>Introduce randomness in variable selection</li>
+<li>Prediction by majority vote</li>
+</ul>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+              <ul>
+<li>Lot of courses cover regression</li>
+<li>Informal intro to random forests</li>
+<li>ENsembles :Focus on 'what data says' rather than modeling natural process</li>
+<li>DTree : Greedily select vars which achieve separation</li>
+<li>Site edwin chen</li>
+<li>Example : give data to friend, she asks questions looking at data, gives outcome</li>
+</ul>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              19/32
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Fitting and Simple Evaluation</h1></header>
+            
+            
+            <section><h2>Fit</h2>
+<div class="highlight"><pre><span class="lineno"> 1</span> <span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
+<span class="lineno"> 2</span> 
+<span class="lineno"> 3</span> <span class="n">rf</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">()</span>
+<span class="lineno"> 4</span> 
+<span class="lineno"> 5</span> <span class="n">model</span> <span class="o">=</span> <span class="n">rf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">feature_mat</span><span class="p">,</span> <span class="n">target</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<span class="lineno"> 6</span> 
+<span class="lineno"> 7</span> <span class="n">raw_feature_importance</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">feature_importances_</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="lineno"> 8</span> 
+<span class="lineno"> 9</span> <span class="n">feature_importance</span> <span class="o">=</span> <span class="p">[</span><span class="nb">round</span><span class="p">(</span><span class="n">val</span> <span class="o">*</span> <span class="mf">100.0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">raw_feature_importance</span><span class="p">]</span>
+<span class="lineno">10</span> 
+<span class="lineno">11</span> <span class="k">print</span> <span class="nb">zip</span><span class="p">(</span><span class="n">feature_mat</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="n">feature_importance</span><span class="p">)</span>
+</pre></div>
+
+<h2>Simple Evaluation</h2>
+<div class="highlight"><pre><span class="lineno">1</span> <span class="n">model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">feature_mat</span><span class="p">,</span> <span class="n">target</span><span class="o">.</span><span class="n">values</span><span class="p">)</span> <span class="c"># Wow ! But wait..</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              20/32
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Evaluation</h1></header>
+            
+            
+            <section><h2>Importance of evaluation</h2>
+<ul>
+<li>Right metric</li>
+<li>Metrics for classification and regressions</li>
+<li>Right Measurement</li>
+</ul>
+<h2>Evaluating classifiers</h2>
+<ul>
+<li>Precision = (True Positives)/(P)</li>
+<li>Recall = (True Positives)/(P')</li>
+</ul>
+<p><img alt="Confusion Matrix" src="file:///home/harshad.saykhedkar/projects/my_open_source/presentations/fifth_elephant_2014/ml_workshop/resources/two_way_table.png" /></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              21/32
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Evaluation (continued..)</h1></header>
+            
+            
+            <section><div class="highlight"><pre><span class="lineno">1</span> <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">classification_report</span>
+<span class="lineno">2</span> 
+<span class="lineno">3</span> <span class="k">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">feature_mat</span><span class="p">),</span> <span class="n">target</span><span class="o">.</span><span class="n">values</span><span class="p">))</span>
+</pre></div>
+
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+              <ul>
+<li>Precision : predicted one, how many actually are ?</li>
+<li>Recall : of all ones, how many covered ?</li>
+<li>Cite Andrew Ngs course for better details</li>
+</ul>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              22/32
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Evaluation and Bias-Variance</h1></header>
+            
+            
+            <section><h2>Bias Vs. Variance Problem</h2>
+<ul>
+<li>
+<p>How does the problem arise ?</p>
+</li>
+<li>
+<p>How is it solved in classical regression models ?</p>
+</li>
+<li>
+<p>How Random Forest approaches the problem ?</p>
+</li>
+</ul>
+<h2>Key Idea</h2>
+<p>Test on dataset with no degrees of freedom</p>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+              <ul>
+<li>Poor fit on train data : features lacking, wrong way to model problem ?</li>
+<li>Variance : student mugging up on exam</li>
+<li>Model fitting is optimization routine : so need degree of freedom = 0</li>
+<li>On train data : I can keep tuning params to achieve good fit</li>
+</ul>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              23/32
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Skewed Data in Real World</h1></header>
+            
+            
+            <section><h2>Asymmetric Costs</h2>
+<ul>
+<li>
+<p>Predicting likely respondents for marketing campaigns</p>
+</li>
+<li>
+<p>Public Relations Disaster : Target pregnancy prediction model</p>
+</li>
+<li>
+<p>Predicting likelihood of nuclear attack and launch pre-emptive strike ?</p>
+</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              24/32
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Iteration/Better Model</h1></header>
+            
+            
+            <section><div class="highlight"><pre><span class="lineno"> 1</span> <span class="kn">from</span> <span class="nn">sklearn.cross_validation</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="lineno"> 2</span> 
+<span class="lineno"> 3</span> <span class="n">train_feature</span><span class="p">,</span> <span class="n">test_feature</span><span class="p">,</span> <span class="n">train_target</span><span class="p">,</span> <span class="n">test_target</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">feature_mat</span><span class="p">,</span> <span class="n">target</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">42</span><span class="p">)</span>
+<span class="lineno"> 4</span> 
+<span class="lineno"> 5</span> <span class="n">wts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">5</span> <span class="k">if</span> <span class="n">y</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">else</span> <span class="mi">1</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">train_target</span><span class="p">])</span> <span class="c"># Weights</span>
+<span class="lineno"> 6</span> 
+<span class="lineno"> 7</span> <span class="n">better_rf</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">min_samples_leaf</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">n_jobs</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">verbose</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="lineno"> 8</span> 
+<span class="lineno"> 9</span> <span class="n">better_model</span> <span class="o">=</span> <span class="n">better_rf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_feature</span><span class="p">,</span> <span class="n">train_target</span><span class="p">,</span> <span class="n">sample_weight</span> <span class="o">=</span> <span class="n">wts</span><span class="p">)</span>
+<span class="lineno">10</span> 
+<span class="lineno">11</span> <span class="k">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">better_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">train_feature</span><span class="p">),</span> <span class="n">train_target</span><span class="p">)</span> <span class="p">)</span>
+<span class="lineno">12</span> 
+<span class="lineno">13</span> <span class="k">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test_feature</span><span class="p">),</span> <span class="n">test_target</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+
+<h2>Inference</h2>
+<ul>
+<li>Can trade off precision and recall</li>
+<li>Default probability threshold can be changed</li>
+<li>Marketing campaigns : use lift as a metric</li>
+</ul>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+              <ul>
+<li>How handled asymmetric : weights</li>
+<li>How handled overfit : min samples (should be higher)</li>
+<li>Marketing campaigns : use sorted list, how much effort is saved etc.</li>
+</ul>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              25/32
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Introduction to Unsupervised Learning</h1></header>
+            
+            
+            <section><h2>Idea</h2>
+<ul>
+<li>Unlabelled data</li>
+<li>Trying to find structure</li>
+</ul>
+<h2>Applications</h2>
+<ul>
+<li>Customer segmentation</li>
+<li>Topic based classification of documents</li>
+<li>Reducing dimensionality of genomic datasets</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              26/32
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>K-mean clustering</h1></header>
+            
+            
+            <section><h2>How does it work ?</h2>
+<ul>
+<li>Distance as a measure of similarity</li>
+<li>Randomly partition</li>
+<li>Re-calculate centroids, re-assign</li>
+</ul>
+<h2>Customer segmentation on data</h2>
+<div class="highlight"><pre><span class="lineno"> 1</span> <span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">preprocessing</span>
+<span class="lineno"> 2</span> 
+<span class="lineno"> 3</span> <span class="n">lookup</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;yes&#39;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">&#39;no&#39;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
+<span class="lineno"> 4</span> 
+<span class="lineno"> 5</span> <span class="n">ind</span><span class="p">[</span><span class="s">&#39;housing_dummy&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ind</span><span class="p">[</span><span class="s">&#39;housing&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">lamda</span> <span class="n">x</span><span class="p">:</span> <span class="n">lookup</span><span class="p">[</span><span class="n">x</span><span class="p">])</span>
+<span class="lineno"> 6</span> 
+<span class="lineno"> 7</span> <span class="n">econ_data</span> <span class="o">=</span> <span class="n">ind</span><span class="p">[[</span><span class="s">&#39;balance_by_age&#39;</span><span class="p">,</span> <span class="s">&#39;housing_dummy&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">as_matrix</span><span class="p">()</span>
+<span class="lineno"> 8</span> 
+<span class="lineno"> 9</span> <span class="n">econ_data_scaled</span> <span class="o">=</span> <span class="n">preprocessing</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="n">econ_data</span><span class="p">)</span>
+<span class="lineno">10</span> 
+<span class="lineno">11</span> <span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">cluster</span>
+<span class="lineno">12</span> 
+<span class="lineno">13</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">3</span> <span class="c"># Conventional wisdom of low-middle-wealthy class</span>
+<span class="lineno">14</span> 
+<span class="lineno">15</span> <span class="n">kmeans</span> <span class="o">=</span> <span class="n">cluster</span><span class="o">.</span><span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span> <span class="o">=</span> <span class="n">k</span><span class="p">)</span>
+<span class="lineno">16</span> 
+<span class="lineno">17</span> <span class="n">kmeans</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">econ_data_scaled</span><span class="p">)</span>
+<span class="lineno">18</span> 
+<span class="lineno">19</span> <span class="n">predicted</span> <span class="o">=</span> <span class="n">kmeans</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">econ_data_scaled</span><span class="p">)</span>
+<span class="lineno">20</span> 
+<span class="lineno">21</span> <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">econ_data_scaled</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">econ_data_scaled</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span> <span class="o">=</span> <span class="n">y_pred</span><span class="p">)</span>
+</pre></div>
+
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+              <ul>
+<li>Task : clusters based on socio-economic condition</li>
+<li>Trivial example : only two vars help vizualize</li>
+<li>Not good way : MIXING linear and binary var.</li>
+<li>Binary vars have different variance</li>
+</ul>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              27/32
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Curse of Unstructured Data</h1></header>
+            
+            
+            <section><h2>Examples</h2>
+<ul>
+<li>
+<p>Face recognition</p>
+</li>
+<li>
+<p>Spam filtering, news article recommendations</p>
+</li>
+<li>
+<p>Detect motion in video feed for security concerns </p>
+</li>
+</ul>
+<h2>Problems</h2>
+<ul>
+<li>
+<p>Preprocessing is harder</p>
+</li>
+<li>
+<p>Data model is not easy</p>
+</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              28/32
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Vector Space Representation</h1></header>
+            
+            
+            <section><p><img alt="Vector Space Model" src="file:///home/harshad.saykhedkar/projects/my_open_source/presentations/fifth_elephant_2014/ml_workshop/resources/vector_space_model.png" /></p>
+<h2>Representations</h2>
+<ul>
+<li>
+<p>Text, Document mining ?</p>
+</li>
+<li>
+<p>Image data ?</p>
+</li>
+<li>
+<p>Video data ?</p>
+</li>
+</ul>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+              <ul>
+<li>Why is maths good : abstraction</li>
+<li>ML needs vector space : distance, similarity etc</li>
+<li>Text : documents as points</li>
+<li>Image : pixels as axis , NON-LINEAR COMBOS Neural networks</li>
+<li>Videos : I'm not sure, time varying data , 4D space</li>
+</ul>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              29/32
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Real World Tips</h1></header>
+            
+            
+            <section><ul>
+<li>
+<p>Avoiding GIGO approach</p>
+</li>
+<li>
+<p>Importance of data model and feature engineering</p>
+</li>
+<li>
+<p>Fallacy of anticausal systems</p>
+</li>
+<li>
+<p>Fallacy of automated no-brains machine learning</p>
+</li>
+<li>
+<p>Means (big data tools) Vs. insights</p>
+</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              30/32
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Recap</h1></header>
+            
+            
+            <section><ul>
+<li>Define objective</li>
+<li>Get data </li>
+<li>Explore</li>
+<li>Model</li>
+<li>Evaluate</li>
+<li>Iterate</li>
+<li>Validate</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              31/32
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Questions ??</h1></header>
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              32/32
             </aside>
           </footer>
         </div>
@@ -119,8 +1643,188 @@
       
       
       <tr id="toc-row-2">
-        <th><a href="#slide2">-</a></th>
+        <th><a href="#slide2">About Me...</a></th>
         <td><a href="#slide2">2</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-3">
+        <th><a href="#slide3">Workshop Agenda</a></th>
+        <td><a href="#slide3">3</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-4">
+        <th><a href="#slide4">Workshop Agenda</a></th>
+        <td><a href="#slide4">4</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-5">
+        <th><a href="#slide5">What Process ?</a></th>
+        <td><a href="#slide5">5</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-6">
+        <th><a href="#slide6">Typical Process</a></th>
+        <td><a href="#slide6">6</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-7">
+        <th><a href="#slide7">Objective</a></th>
+        <td><a href="#slide7">7</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-8">
+        <th><a href="#slide8">Start!</a></th>
+        <td><a href="#slide8">8</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-9">
+        <th><a href="#slide9">Drilling Down</a></th>
+        <td><a href="#slide9">9</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-10">
+        <th><a href="#slide10">Dissecting Single Variable</a></th>
+        <td><a href="#slide10">10</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-11">
+        <th><a href="#slide11">Introduction to Data Transformations</a></th>
+        <td><a href="#slide11">11</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-12">
+        <th><a href="#slide12">Initial Line of Attack</a></th>
+        <td><a href="#slide12">12</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-13">
+        <th><a href="#slide13">Grouping and Aggregation</a></th>
+        <td><a href="#slide13">13</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-14">
+        <th><a href="#slide14">Outlier Treatments and Missing Data</a></th>
+        <td><a href="#slide14">14</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-15">
+        <th><a href="#slide15">Feature Engineering</a></th>
+        <td><a href="#slide15">15</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-16">
+        <th><a href="#slide16">Modeling</a></th>
+        <td><a href="#slide16">16</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-17">
+        <th><a href="#slide17">Stats Vs. ML Culture</a></th>
+        <td><a href="#slide17">17</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-18">
+        <th><a href="#slide18">Feature and Target Data</a></th>
+        <td><a href="#slide18">18</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-19">
+        <th><a href="#slide19">Introduction to Random Forests</a></th>
+        <td><a href="#slide19">19</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-20">
+        <th><a href="#slide20">Fitting and Simple Evaluation</a></th>
+        <td><a href="#slide20">20</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-21">
+        <th><a href="#slide21">Evaluation</a></th>
+        <td><a href="#slide21">21</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-22">
+        <th><a href="#slide22">Evaluation (continued..)</a></th>
+        <td><a href="#slide22">22</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-23">
+        <th><a href="#slide23">Evaluation and Bias-Variance</a></th>
+        <td><a href="#slide23">23</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-24">
+        <th><a href="#slide24">Skewed Data in Real World</a></th>
+        <td><a href="#slide24">24</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-25">
+        <th><a href="#slide25">Iteration/Better Model</a></th>
+        <td><a href="#slide25">25</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-26">
+        <th><a href="#slide26">Introduction to Unsupervised Learning</a></th>
+        <td><a href="#slide26">26</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-27">
+        <th><a href="#slide27">K-mean clustering</a></th>
+        <td><a href="#slide27">27</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-28">
+        <th><a href="#slide28">Curse of Unstructured Data</a></th>
+        <td><a href="#slide28">28</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-29">
+        <th><a href="#slide29">Vector Space Representation</a></th>
+        <td><a href="#slide29">29</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-30">
+        <th><a href="#slide30">Real World Tips</a></th>
+        <td><a href="#slide30">30</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-31">
+        <th><a href="#slide31">Recap</a></th>
+        <td><a href="#slide31">31</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-32">
+        <th><a href="#slide32">Questions ??</a></th>
+        <td><a href="#slide32">32</a></td>
       </tr>
       
       
