@@ -28,14 +28,14 @@
     <title>Real World Machine Learning</title>
     <!-- Styles -->
     
-    <link rel="stylesheet" media="print" href="file:///home/harshad.saykhedkar/projects/my_open_source/presentations/fifth_elephant_2014/ml_workshop/theme/css/print.css">
-    <link rel="stylesheet" media="screen, projection" href="file:///home/harshad.saykhedkar/projects/my_open_source/presentations/fifth_elephant_2014/ml_workshop/theme/css/screen.css">
+    <link rel="stylesheet" media="print" href="theme/css/print.css">
+    <link rel="stylesheet" media="screen, projection" href="theme/css/screen.css">
     
     
     <!-- /Styles -->
     <!-- Javascripts -->
     
-    <script type="text/javascript" src="file:///home/harshad.saykhedkar/projects/my_open_source/presentations/fifth_elephant_2014/ml_workshop/theme/js/slides.js"></script>
+    <script type="text/javascript" src="theme/js/slides.js"></script>
     
     
     <!-- /Javascripts -->
@@ -70,7 +70,7 @@
             </aside>
             
             <aside class="page_number">
-              1/32
+              1/38
             </aside>
           </footer>
         </div>
@@ -81,17 +81,16 @@
         <div class="slide">
           <div class="inner">
             
-            <header><h1>About Me...</h1></header>
+            <header><h1>About Me</h1></header>
             
             
-            <section><p>Harshad</p>
+            <section><h2>Harshad</h2>
 <ul>
-<li>
-<p>Senior Data Scientist @ SOKRATI</p>
-</li>
-<li>
-<p>Spent last 4 years trying to understand machine learning</p>
-</li>
+<li>Me : Senior Data Scientist @ SOKRATI, Pune</li>
+<li>SOKRATI : Advertising domain startup</li>
+<li>My job : Making sense of click stream data </li>
+<li>My experience : advertising world, telecom and BFSI earlier</li>
+<li>My tools : Python, R and Clojure</li>
 </ul></section>
             
           </div>
@@ -108,7 +107,7 @@
             </aside>
             
             <aside class="page_number">
-              2/32
+              2/38
             </aside>
           </footer>
         </div>
@@ -119,7 +118,7 @@
         <div class="slide">
           <div class="inner">
             
-            <header><h1>Workshop Agenda</h1></header>
+            <header><h1>Conference Agenda</h1></header>
             
             
             <section><p>Machine learning is <em>not only</em> about mathematical algorithms or tools or 
@@ -129,10 +128,10 @@ vizualizations or business knowledge.</p>
 </blockquote>
 <p>It involves balance of,</p>
 <ol>
-<li>Science</li>
-<li>Process</li>
-<li>Engineering</li>
-<li>Art</li>
+<li><strong>Science</strong> (how does the library "fit" a regression?, where does the cost function come from?)</li>
+<li><strong>Process</strong> (how do I go from start/data to end/usable model?)</li>
+<li><strong>Engineering</strong> (how do I work on billion data points? How do I store them?)</li>
+<li><strong>Art</strong> (Black magic.. wodoo! On a serious note, is there a better data model?)</li>
 </ol>
 </section>
             
@@ -147,7 +146,7 @@ Books and courses focus on science.
 Tool and library developers focus on engineering
 A real world ML problem : needs knowledge of each aspect
 Workshop and conference themed around the 4 aspects
-Workshop later on science (R) and engineering (solr, aerospike)
+Workshop on science (R) and engineering (solr, aerospike)
 My talk on some aspects of engineering at conference, many other talks
 Closing talk on art</p>
             
@@ -160,7 +159,7 @@ Closing talk on art</p>
             </aside>
             
             <aside class="page_number">
-              3/32
+              3/38
             </aside>
           </footer>
         </div>
@@ -202,7 +201,7 @@ Closing talk on art</p>
             </aside>
             
             <aside class="page_number">
-              4/32
+              4/38
             </aside>
           </footer>
         </div>
@@ -219,13 +218,13 @@ Closing talk on art</p>
             <section><h2>A real world problem</h2>
 <blockquote>
 <p>We want to sell a product to customers through telemarketing. The last time we did 
-a carpet bombing exercise. Here are bunch of data point from the effort. Tell
+a carpet bombing exercise. Here are bunch of data points from the effort. Tell
 us what should do next time. Can you automate that insight generation ?</p>
 </blockquote>
 <h2>Flurry of questions...</h2>
 <ul>
-<li>Where to start ?</li>
-<li>What am I supposed to model ?</li>
+<li>Where do we start ?</li>
+<li>What are we supposed to model ?</li>
 <li>What algorithm is better suited for this ?</li>
 <li>Do we have too much data ? How do I know that ?</li>
 <li>Do we have too little data ? How do I know that ?</li>
@@ -240,6 +239,7 @@ us what should do next time. Can you automate that insight generation ?</p>
               <ul>
 <li>Typical questions</li>
 <li>Process : systematic way of answering questions</li>
+<li>Other vendors call it something else : SEMMA, CRISP-DM</li>
 <li>Bottom line : useful and practical</li>
 </ul>
             
@@ -252,7 +252,7 @@ us what should do next time. Can you automate that insight generation ?</p>
             </aside>
             
             <aside class="page_number">
-              5/32
+              5/38
             </aside>
           </footer>
         </div>
@@ -283,15 +283,8 @@ us what should do next time. Can you automate that insight generation ?</p>
             <section>
             
               <ul>
-<li>
-<p>Derived through experience</p>
-</li>
-<li>
-<p>Known by other names (CRISP-DM etc.)</p>
-</li>
-<li>
-<p>Not covering get data , <em>conference</em></p>
-</li>
+<li>Not a science, but a good set of best practices</li>
+<li>Not covering get data , <em>conference</em></li>
 </ul>
             
             </section>
@@ -303,7 +296,7 @@ us what should do next time. Can you automate that insight generation ?</p>
             </aside>
             
             <aside class="page_number">
-              6/32
+              6/38
             </aside>
           </footer>
         </div>
@@ -318,7 +311,8 @@ us what should do next time. Can you automate that insight generation ?</p>
             
             
             <section><h2>Dataset background</h2>
-<p><a href="https://github.com/harshadss/my-presentations">https://github.com/harshadss/my-presentations</a></p>
+<p><a href="https://github.com/harshadss/my-presentations">https://github.com/harshadss/my-presentations</a>
+<a href="https://archive.ics.uci.edu/ml/datasets/Bank+Marketing">https://archive.ics.uci.edu/ml/datasets/Bank+Marketing</a></p>
 <ul>
 <li>
 <p>Bank marketing campaign data (S. Moro, P. Cortez and P. Rita, Jun 2014)</p>
@@ -338,12 +332,9 @@ us what should do next time. Can you automate that insight generation ?</p>
             <section>
             
               <ul>
-<li>
-<p>Those who do not have : download from github or UCI ML repo</p>
-</li>
-<li>
-<p>Portugese bank, wants to sell deposit products, generalize to any marketing</p>
-</li>
+<li>Those who do not have : download from github or UCI ML repo</li>
+<li>Portugese bank, wants to sell deposit products, generalize to any marketing</li>
+<li>Classic classification problem</li>
 </ul>
             
             </section>
@@ -355,7 +346,7 @@ us what should do next time. Can you automate that insight generation ?</p>
             </aside>
             
             <aside class="page_number">
-              7/32
+              7/38
             </aside>
           </footer>
         </div>
@@ -366,39 +357,90 @@ us what should do next time. Can you automate that insight generation ?</p>
         <div class="slide has_code">
           <div class="inner">
             
-            <header><h1>Start!</h1></header>
+            <header><h1>First Date!</h1></header>
             
             
             <section><h2>Read the data</h2>
-<div class="highlight"><pre><span class="lineno">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="lineno">2</span> 
-<span class="lineno">3</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
-<span class="lineno">4</span> 
-<span class="lineno">5</span> <span class="n">bank_file</span> <span class="o">=</span> <span class="s">&#39;./bank-full.csv&#39;</span>
-<span class="lineno">6</span> 
-<span class="lineno">7</span> <span class="n">ind</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">bank_file</span><span class="p">,</span> <span class="n">header</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">delimiter</span> <span class="o">=</span> <span class="s">&#39;;&#39;</span><span class="p">)</span>
-</pre></div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+
+<span class="n">bank_file</span> <span class="o">=</span> <span class="s">&#39;./bank-full.csv&#39;</span> <span class="c"># Set to appropriate path</span>
+
+<span class="n">ind</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">bank_file</span><span class="p">,</span> <span class="n">header</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">delimiter</span> <span class="o">=</span> <span class="s">&#39;;&#39;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
 <h2>Handshake with data</h2>
-<div class="highlight"><pre><span class="lineno">1</span> <span class="n">ind</span><span class="o">.</span><span class="n">shape</span> <span class="c"># How many rows ? How many columns ?</span>
-<span class="lineno">2</span> 
-<span class="lineno">3</span> <span class="n">ind</span><span class="o">.</span><span class="n">columns</span> <span class="c"># What are the names of columns ?</span>
-<span class="lineno">4</span> 
-<span class="lineno">5</span> <span class="n">ind</span><span class="o">.</span><span class="n">dtypes</span> <span class="c"># Are the columns read correctly ?</span>
-</pre></div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">ind</span><span class="o">.</span><span class="n">shape</span> <span class="c"># How many rows ? How many columns ?</span>
 
-<h2>Checking few observations</h2>
-<div class="highlight"><pre><span class="lineno">1</span> <span class="n">ind</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-<span class="lineno">2</span> 
-<span class="lineno">3</span> <span class="n">ind</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
-<span class="lineno">4</span> 
-<span class="lineno">5</span> <span class="n">ind</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span> <span class="c"># Only does rows subsetting</span>
-<span class="lineno">6</span> 
-<span class="lineno">7</span> <span class="n">ind</span><span class="o">.</span><span class="n">ix</span><span class="p">[</span> <span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="c"># ix is special format for rows + column subsetting</span>
-<span class="lineno">8</span> 
-<span class="lineno">9</span> <span class="n">ind</span><span class="o">.</span><span class="n">ix</span><span class="p">[</span> <span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="p">[</span><span class="s">&#39;marital&#39;</span><span class="p">,</span> <span class="s">&#39;y&#39;</span><span class="p">]</span> <span class="p">]</span> <span class="c"># Can use a list of col names</span>
-</pre></div>
+<span class="n">ind</span><span class="o">.</span><span class="n">columns</span> <span class="c"># What are the names of columns ?</span>
 
+<span class="n">ind</span><span class="o">.</span><span class="n">dtypes</span> <span class="c"># Are the columns read correctly ?</span>
+</pre></div>
+</td></tr></table></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              8/38
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Second Date!</h1></header>
+            
+            
+            <section><h2>Checking few observations</h2>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">ind</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+
+<span class="n">ind</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+
+<span class="c"># Subsetting in Pandas is different from R</span>
+
+<span class="n">ind</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span> <span class="c"># Only does rows subsetting</span>
+
+<span class="n">ind</span><span class="o">.</span><span class="n">ix</span><span class="p">[</span> <span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="c"># ix is special format for rows + column subsetting</span>
+
+<span class="n">ind</span><span class="o">.</span><span class="n">ix</span><span class="p">[</span> <span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="p">[</span><span class="s">&#39;marital&#39;</span><span class="p">,</span> <span class="s">&#39;y&#39;</span><span class="p">]</span> <span class="p">]</span> <span class="c"># Can use a list of col names</span>
+</pre></div>
+</td></tr></table>
 </section>
             
           </div>
@@ -407,6 +449,7 @@ us what should do next time. Can you automate that insight generation ?</p>
             <section>
             
               <ul>
+<li>First date with our data </li>
 <li>First hassle : read data, delimiters, can be other sources like db</li>
 <li>Top level view of data : shape, type of variables, dimensions</li>
 <li>Explain vars</li>
@@ -423,7 +466,7 @@ us what should do next time. Can you automate that insight generation ?</p>
             </aside>
             
             <aside class="page_number">
-              8/32
+              9/38
             </aside>
           </footer>
         </div>
@@ -438,29 +481,41 @@ us what should do next time. Can you automate that insight generation ?</p>
             
             
             <section><h2>Check outcome variable</h2>
-<div class="highlight"><pre><span class="lineno">1</span> <span class="n">ind</span><span class="p">[</span><span class="s">&#39;y&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span> <span class="c"># Is it categorical or numeric ?</span>
-<span class="lineno">2</span> 
-<span class="lineno">3</span> <span class="n">ind</span><span class="p">[</span><span class="s">&#39;y&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span> <span class="c"># How many unique values ?</span>
-<span class="lineno">4</span> 
-<span class="lineno">5</span> <span class="n">ind</span><span class="p">[</span><span class="s">&#39;y&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span> <span class="c"># Count by unique values</span>
-</pre></div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">ind</span><span class="p">[</span><span class="s">&#39;y&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span> <span class="c"># Is it categorical or numeric ?</span>
 
+<span class="n">ind</span><span class="p">[</span><span class="s">&#39;y&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span> <span class="c"># How many unique values ?</span>
+
+<span class="n">ind</span><span class="p">[</span><span class="s">&#39;y&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span> <span class="c"># Count by unique values</span>
+</pre></div>
+</td></tr></table>
 <h2>Checking numeric variables</h2>
-<div class="highlight"><pre><span class="lineno">1</span> <span class="n">ind</span><span class="p">[</span><span class="s">&#39;age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-<span class="lineno">2</span> 
-<span class="lineno">3</span> <span class="n">ind</span><span class="p">[</span><span class="s">&#39;age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
-<span class="lineno">4</span> 
-<span class="lineno">5</span> <span class="n">ind</span><span class="p">[</span><span class="s">&#39;age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
-</pre></div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">ind</span><span class="p">[</span><span class="s">&#39;age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 
+<span class="n">ind</span><span class="p">[</span><span class="s">&#39;age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+
+<span class="n">ind</span><span class="p">[</span><span class="s">&#39;age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</td></tr></table>
 <h2>Checking numeric variable with skewness</h2>
-<div class="highlight"><pre><span class="lineno">1</span> <span class="n">ind</span><span class="p">[</span><span class="s">&#39;balance&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-<span class="lineno">2</span> 
-<span class="lineno">3</span> <span class="n">ind</span><span class="p">[</span><span class="s">&#39;balance&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
-<span class="lineno">4</span> 
-<span class="lineno">5</span> <span class="n">ind</span><span class="p">[</span><span class="s">&#39;balance&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
-</pre></div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">ind</span><span class="p">[</span><span class="s">&#39;balance&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 
+<span class="n">ind</span><span class="p">[</span><span class="s">&#39;balance&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+
+<span class="n">ind</span><span class="p">[</span><span class="s">&#39;balance&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</td></tr></table>
 </section>
             
           </div>
@@ -484,7 +539,7 @@ us what should do next time. Can you automate that insight generation ?</p>
             </aside>
             
             <aside class="page_number">
-              9/32
+              10/38
             </aside>
           </footer>
         </div>
@@ -505,16 +560,21 @@ us what should do next time. Can you automate that insight generation ?</p>
   or equal to 10</p>
 </blockquote>
 <p>Percentiles are excellent way of summarizing distribution of data</p>
-<div class="highlight"><pre><span class="lineno">1</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
-<span class="lineno">2</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span> <span class="c"># arange is not right inclusive</span>
-<span class="lineno">3</span> <span class="n">dist</span> <span class="o">=</span> <span class="n">ind</span><span class="p">[</span><span class="s">&#39;balance&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">))</span> <span class="c"># Skewed distributions ?</span>
-<span class="lineno">4</span> <span class="n">dist</span>
-<span class="lineno">5</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">pl</span>
-<span class="lineno">6</span> <span class="n">pl</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dist</span><span class="p">)</span>
-<span class="lineno">7</span> <span class="n">pl</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
 
-<h2>Check outliers on lower end</h2></section>
+<span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span> <span class="c"># arange is not right inclusive</span>
+
+<span class="n">dist</span> <span class="o">=</span> <span class="n">ind</span><span class="p">[</span><span class="s">&#39;balance&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">))</span> <span class="c"># Skewed distributions ?</span>
+
+<span class="n">dist</span>
+</pre></div>
+</td></tr></table></section>
             
           </div>
           <div class="presenter_notes">
@@ -530,7 +590,7 @@ us what should do next time. Can you automate that insight generation ?</p>
             </aside>
             
             <aside class="page_number">
-              10/32
+              11/38
             </aside>
           </footer>
         </div>
@@ -545,22 +605,23 @@ us what should do next time. Can you automate that insight generation ?</p>
             
             
             <section><p>Information rarely useful as-is, need to transform</p>
-<div class="highlight"><pre><span class="lineno">1</span> <span class="n">y_n_lookup</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;yes&#39;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">&#39;no&#39;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
-<span class="lineno">2</span> <span class="n">ind</span><span class="p">[</span><span class="s">&#39;y_dummy&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ind</span><span class="p">[</span><span class="s">&#39;y&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">y_n_lookup</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="p">)</span>
-<span class="lineno">3</span> <span class="n">ind</span><span class="p">[</span><span class="s">&#39;y_dummy&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
-</pre></div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">y_n_lookup</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;yes&#39;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">&#39;no&#39;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
 
+<span class="n">ind</span><span class="p">[</span><span class="s">&#39;y_dummy&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ind</span><span class="p">[</span><span class="s">&#39;y&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">y_n_lookup</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="p">)</span>
+
+<span class="n">ind</span><span class="p">[</span><span class="s">&#39;y_dummy&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</td></tr></table>
 <h2>How does it work ?</h2>
 <ul>
-<li>
-<p>Lambdas : anonymous functions</p>
-</li>
-<li>
-<p>Create a map holding transformation</p>
-</li>
-<li>
-<p>map applies the transformation to every row</p>
-</li>
+<li>Lambdas : anonymous functions</li>
+<li>Create a dictionary holding transformation</li>
+<li>Map method on DF applies the transformation to every row</li>
+<li>Think of map-reduce in memory</li>
 </ul>
 </section>
             
@@ -570,15 +631,9 @@ us what should do next time. Can you automate that insight generation ?</p>
             <section>
             
               <ul>
-<li>
-<p>Transformations are very important, Need to quickly identify transformations</p>
-</li>
-<li>
-<p>What is being done : map phase of map-reduce in memory</p>
-</li>
-<li>
-<p>Lambda is anonymous function : avoids writing separate function</p>
-</li>
+<li>Transformations are very important, Need to quickly identify transformations</li>
+<li>What is being done : map phase of map-reduce in memory</li>
+<li>Lambda is anonymous function : avoids writing separate function</li>
 </ul>
             
             </section>
@@ -590,7 +645,7 @@ us what should do next time. Can you automate that insight generation ?</p>
             </aside>
             
             <aside class="page_number">
-              11/32
+              12/38
             </aside>
           </footer>
         </div>
@@ -624,18 +679,10 @@ us what should do next time. Can you automate that insight generation ?</p>
             <section>
             
               <ul>
-<li>
-<p>Explain line of attack : demog, socio-economic vars</p>
-</li>
-<li>
-<p>Essentially about validating common sense/gut feeling</p>
-</li>
-<li>
-<p>Deposits are risk free products : should young people buy it ? not clear</p>
-</li>
-<li>
-<p>Motivate need of grouping, aggregation</p>
-</li>
+<li>Explain line of attack : demog, socio-economic vars</li>
+<li>Essentially about validating common sense/gut feeling</li>
+<li>Deposits are risk free products : should young people buy it ? not clear</li>
+<li>Motivate need of grouping, aggregation</li>
 </ul>
             
             </section>
@@ -647,7 +694,44 @@ us what should do next time. Can you automate that insight generation ?</p>
             </aside>
             
             <aside class="page_number">
-              12/32
+              13/38
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Grouping and Aggregation</h1></header>
+            
+            
+            <section><p>Image courtesy of book Python for Data Analysis, Wes McKinney</p>
+<p><img alt="Split Apply Combine" src="resources/split_apply_combine1.png" /></p>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+              <ul>
+<li>Concept similar to mapreduce</li>
+<li>Example of marital status : divide by marital status, average, combine</li>
+</ul>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              14/38
             </aside>
           </footer>
         </div>
@@ -661,7 +745,48 @@ us what should do next time. Can you automate that insight generation ?</p>
             <header><h1>Grouping and Aggregation</h1></header>
             
             
-            <section><p><img alt="Split Apply Combine" src="file:///home/harshad.saykhedkar/projects/my_open_source/presentations/fifth_elephant_2014/ml_workshop/resources/split_apply_combine1.png" /></p>
+            <section><h2>Does marital status affect outcome ?</h2>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">ind</span><span class="p">[</span><span class="s">&#39;marital&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+
+<span class="n">gb_marital</span> <span class="o">=</span> <span class="n">ind</span><span class="p">[</span><span class="s">&#39;y_dummy&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">ind</span><span class="p">[</span><span class="s">&#39;marital&#39;</span><span class="p">])</span>
+
+<span class="n">gb_marital</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</td></tr></table>
+<h2>Does age affect outcome with marital status ?</h2>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">age_group_names</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;young&#39;</span><span class="p">,</span> <span class="s">&#39;lower middle&#39;</span><span class="p">,</span> <span class="s">&#39;middle&#39;</span><span class="p">,</span> <span class="s">&#39;senior&#39;</span><span class="p">]</span>
+
+<span class="n">ind</span><span class="p">[</span><span class="s">&#39;age_binned&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">qcut</span><span class="p">(</span><span class="n">ind</span><span class="p">[</span><span class="s">&#39;age&#39;</span><span class="p">],</span> <span class="mi">4</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">age_group_names</span><span class="p">)</span>
+
+<span class="n">ind</span><span class="p">[</span><span class="s">&#39;age_binned&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+
+<span class="n">gb_marital_age</span> <span class="o">=</span> <span class="n">ind</span><span class="p">[</span><span class="s">&#39;y_dummy&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">ind</span><span class="p">[</span><span class="s">&#39;marital&#39;</span><span class="p">],</span>  \
+                 <span class="n">ind</span><span class="p">[</span><span class="s">&#39;age_binned&#39;</span><span class="p">]]</span> <span class="p">)</span> <span class="c"># List of keys</span>
+
+<span class="n">gb_marital_age</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="c"># Oops!</span>
+
+<span class="n">gb_marital_age</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span>
+
+<span class="n">gb_marital_age</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span> <span class="c"># Check if enough samples in each group</span>
+</pre></div>
+</td></tr></table>
 </section>
             
           </div>
@@ -670,41 +795,9 @@ us what should do next time. Can you automate that insight generation ?</p>
             <section>
             
               <ul>
-<li>
-<p>Concept similar to mapreduce</p>
-</li>
-<li>
-<p>Example of marital status : divide by marital status, average, combine</p>
-</li>
-</ul>
-<h1>Grouping and Aggregation</h1>
-<h2>Does marital status affect outcome ?</h2>
-<div class="highlight"><pre><span class="lineno">1</span> <span class="n">ind</span><span class="p">[</span><span class="s">&#39;marital&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
-<span class="lineno">2</span> <span class="n">gb_marital</span> <span class="o">=</span> <span class="n">ind</span><span class="p">[</span><span class="s">&#39;y_dummy&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">ind</span><span class="p">[</span><span class="s">&#39;marital&#39;</span><span class="p">])</span>
-<span class="lineno">3</span> <span class="n">gb_marital</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-</pre></div>
-
-<h2>Does age affect outcome with marital status ?</h2>
-<div class="highlight"><pre><span class="lineno">1</span> <span class="n">age_group_names</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;Young&#39;</span><span class="p">,</span> <span class="s">&#39;Lower Middle&#39;</span><span class="p">,</span> <span class="s">&#39;Middle&#39;</span><span class="p">,</span> <span class="s">&#39;Senior&#39;</span><span class="p">]</span>
-<span class="lineno">2</span> <span class="n">ind</span><span class="p">[</span><span class="s">&#39;age_binned&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">qcut</span><span class="p">(</span><span class="n">ind</span><span class="p">[</span><span class="s">&#39;age&#39;</span><span class="p">],</span> <span class="mi">4</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">age_group_names</span><span class="p">)</span>
-<span class="lineno">3</span> <span class="n">ind</span><span class="p">[</span><span class="s">&#39;age_binned&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
-<span class="lineno">4</span> <span class="n">gb_marital_age</span> <span class="o">=</span> <span class="n">ind</span><span class="p">[</span><span class="s">&#39;y_dummy&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">ind</span><span class="p">[</span><span class="s">&#39;marital&#39;</span><span class="p">],</span> <span class="n">ind</span><span class="p">[</span><span class="s">&#39;age_binned&#39;</span><span class="p">]</span> <span class="p">)</span>
-<span class="lineno">5</span> <span class="n">gb_marital_age</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="c"># Oops!</span>
-<span class="lineno">6</span> <span class="n">gb_marital_age</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span>
-<span class="lineno">7</span> <span class="n">gb_marital_age</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span> <span class="c"># Check if enough samples in each group</span>
-</pre></div>
-
-<h1>Presenter Notes</h1>
-<ul>
-<li>
-<p>Meaty part</p>
-</li>
-<li>
-<p>Even if you have large # of vars : youd have some gut feel on what works</p>
-</li>
-<li>
-<p>Stark difference by age + marital status</p>
-</li>
+<li>Meaty part</li>
+<li>Even if you have large # of vars : youd have some gut feel on what works</li>
+<li>Stark difference by age + marital status</li>
 </ul>
             
             </section>
@@ -716,7 +809,7 @@ us what should do next time. Can you automate that insight generation ?</p>
             </aside>
             
             <aside class="page_number">
-              13/32
+              15/38
             </aside>
           </footer>
         </div>
@@ -731,25 +824,33 @@ us what should do next time. Can you automate that insight generation ?</p>
             
             
             <section><h2>Detecting outliers</h2>
-<div class="highlight"><pre><span class="lineno">1</span> <span class="n">top_end</span> <span class="o">=</span> <span class="n">ind</span><span class="p">[</span><span class="s">&#39;balance&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.9</span><span class="p">,</span> <span class="mf">1.01</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">))</span> <span class="c"># Top 10 </span>
-<span class="lineno">2</span> <span class="n">top_end</span>
-<span class="lineno">3</span> <span class="n">pl</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">top_end</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">top_end</span><span class="o">.</span><span class="n">values</span><span class="p">)</span> <span class="c"># Accesing index</span>
-<span class="lineno">4</span> <span class="n">pl</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-<span class="lineno">5</span> <span class="n">pl</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">top_end</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">top_end</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
-<span class="lineno">6</span> <span class="n">pl</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.99</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">20000</span><span class="p">])</span>
-<span class="lineno">7</span> <span class="n">pl</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c"># Now a much better plot</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">top_end</span> <span class="o">=</span> <span class="n">ind</span><span class="p">[</span><span class="s">&#39;balance&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.9</span><span class="p">,</span> <span class="mf">1.01</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">))</span> <span class="c"># Top 10 </span>
+<span class="n">top_end</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">top_end</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">top_end</span><span class="o">.</span><span class="n">values</span><span class="p">)</span> <span class="c"># Accesing index</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">top_end</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">top_end</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.99</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">20000</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c"># Now a much better plot</span>
 </pre></div>
-
+</td></tr></table>
 <h2>Removing outliers</h2>
-<div class="highlight"><pre><span class="lineno">1</span> <span class="n">ind</span> <span class="o">=</span> <span class="n">ind</span><span class="p">[</span><span class="n">ind</span><span class="o">.</span><span class="n">balance</span> <span class="o">&lt;=</span> <span class="mi">13000</span> <span class="p">]</span> <span class="c"># Uses broadcasting</span>
-<span class="lineno">2</span> <span class="n">ind</span><span class="o">.</span><span class="n">shape</span> <span class="c"># How many left now ?</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">ind</span> <span class="o">=</span> <span class="n">ind</span><span class="p">[</span><span class="n">ind</span><span class="o">.</span><span class="n">balance</span> <span class="o">&lt;=</span> <span class="mi">13000</span> <span class="p">]</span> <span class="c"># Uses broadcasting</span>
+<span class="n">ind</span><span class="o">.</span><span class="n">shape</span> <span class="c"># How many left now ?</span>
 </pre></div>
-
+</td></tr></table>
 <h2>Missing data strategies</h2>
 <ul>
 <li>Replace with median/mean of column</li>
 <li>Replace with zero</li>
-<li>Drop column if more than 30%-40% data missing</li>
 <li>Convert to bins and keep missing as separate bin</li>
 </ul>
 </section>
@@ -760,12 +861,9 @@ us what should do next time. Can you automate that insight generation ?</p>
             <section>
             
               <ul>
-<li>
-<p>Why outliers removed : algos are sensitive (e.g. kmeans)</p>
-</li>
-<li>
-<p>Missing data is a reality, cannot keep dropping columns</p>
-</li>
+<li>Why outliers removed : algos are sensitive (e.g. kmeans)</li>
+<li>Missing data is a reality, cannot keep dropping columns</li>
+<li>Other strategies : building model for filling data</li>
 </ul>
             
             </section>
@@ -777,7 +875,7 @@ us what should do next time. Can you automate that insight generation ?</p>
             </aside>
             
             <aside class="page_number">
-              14/32
+              16/38
             </aside>
           </footer>
         </div>
@@ -795,26 +893,73 @@ us what should do next time. Can you automate that insight generation ?</p>
 <ul>
 <li>Looking at same information from different view</li>
 <li>Helps treat non-linearities, too many categories</li>
-<li>Often differentiator between good and great results</li>
 </ul>
 <h2>Creating a 'life stage' variable</h2>
-<div class="highlight"><pre><span class="lineno">1</span> <span class="n">ind</span><span class="p">[</span><span class="s">&#39;life_stage&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ind</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s">&#39;age_binned&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s">&#39; &amp; &#39;</span> <span class="o">+</span> <span class="n">x</span><span class="p">[</span><span class="s">&#39;marital&#39;</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
-<span class="lineno">2</span> 
-<span class="lineno">3</span> <span class="n">ind</span><span class="p">[</span><span class="s">&#39;life_stage&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
-</pre></div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">ind</span><span class="p">[</span><span class="s">&#39;life_stage&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ind</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s">&#39;age_binned&#39;</span><span class="p">]</span> <span class="o">+</span> \
+                             <span class="s">&#39; &amp; &#39;</span> <span class="o">+</span> <span class="n">x</span><span class="p">[</span><span class="s">&#39;marital&#39;</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
 
-<h2>Creating a ratio variable of balance to age</h2>
-<div class="highlight"><pre><span class="lineno">1</span> <span class="n">ind</span><span class="p">[</span><span class="s">&#39;balance_by_age&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">ind</span><span class="p">[</span><span class="s">&#39;balance&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="mi">10000</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">ind</span><span class="p">[</span><span class="s">&#39;age&#39;</span><span class="p">])</span>
-<span class="lineno">2</span> 
-<span class="lineno">3</span> <span class="n">balance_by_age_labels</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;very low&#39;</span><span class="p">,</span> <span class="s">&#39;low&#39;</span><span class="p">,</span> <span class="s">&#39;medium&#39;</span><span class="p">,</span> <span class="s">&#39;high&#39;</span><span class="p">,</span> <span class="s">&#39;very high&#39;</span><span class="p">]</span>
-<span class="lineno">4</span> 
-<span class="lineno">5</span> <span class="n">ind</span><span class="p">[</span><span class="s">&#39;balance_by_age_binned&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">qcut</span><span class="p">(</span><span class="n">ind</span><span class="p">[</span><span class="s">&#39;balance_by_age&#39;</span><span class="p">],</span> <span class="mi">5</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">balance_by_age_labels</span><span class="p">)</span>
-<span class="lineno">6</span> 
-<span class="lineno">7</span> <span class="n">gb_bal_by_age</span> <span class="o">=</span> <span class="n">ind</span><span class="p">[</span><span class="s">&#39;y_dummy&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">ind</span><span class="p">[</span><span class="s">&#39;balance_by_age_binned&#39;</span><span class="p">]</span> <span class="p">)</span>
-<span class="lineno">8</span> 
-<span class="lineno">9</span> <span class="n">gb_bal_by_age</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span><span class="o">.</span><span class="n">order</span><span class="p">()</span> <span class="c"># This is a huge insight again!</span>
+<span class="n">ind</span><span class="p">[</span><span class="s">&#39;life_stage&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span> <span class="c"># Can eliminate minor categories</span>
 </pre></div>
+</td></tr></table></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              17/38
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Feature Engineering (continued..)</h1></header>
+            
+            
+            <section><h2>Creating a ratio variables</h2>
+<ul>
+<li>More balance at lower age =&gt; better</li>
+<li>Money better off with log (disputable!, just one way of transforming)</li>
+</ul>
+<p>How to do it ?</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">ind</span><span class="p">[</span><span class="s">&#39;balance_by_age&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">ind</span><span class="p">[</span><span class="s">&#39;balance&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="mi">10000</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">ind</span><span class="p">[</span><span class="s">&#39;age&#39;</span><span class="p">])</span>
 
+<span class="n">balance_by_age_labels</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;very low&#39;</span><span class="p">,</span> <span class="s">&#39;low&#39;</span><span class="p">,</span> <span class="s">&#39;medium&#39;</span><span class="p">,</span> <span class="s">&#39;high&#39;</span><span class="p">,</span> <span class="s">&#39;very high&#39;</span><span class="p">]</span>
+
+<span class="n">ind</span><span class="p">[</span><span class="s">&#39;balance_by_age_binned&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">qcut</span><span class="p">(</span><span class="n">ind</span><span class="p">[</span><span class="s">&#39;balance_by_age&#39;</span><span class="p">],</span>
+                                       <span class="mi">5</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">balance_by_age_labels</span><span class="p">)</span>
+
+<span class="n">gb_bal_by_age</span> <span class="o">=</span> <span class="n">ind</span><span class="p">[</span><span class="s">&#39;y_dummy&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">ind</span><span class="p">[</span><span class="s">&#39;balance_by_age_binned&#39;</span><span class="p">]</span> <span class="p">)</span>
+
+<span class="n">gb_bal_by_age</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">order</span><span class="p">()</span> <span class="c"># This is a huge insight again!</span>
+</pre></div>
+</td></tr></table>
 </section>
             
           </div>
@@ -837,7 +982,7 @@ us what should do next time. Can you automate that insight generation ?</p>
             </aside>
             
             <aside class="page_number">
-              15/32
+              18/38
             </aside>
           </footer>
         </div>
@@ -851,16 +996,20 @@ us what should do next time. Can you automate that insight generation ?</p>
             <header><h1>Modeling</h1></header>
             
             
-            <section><h2>What is modeling ?</h2>
-<blockquote>
-<p>g(Y) = f(<strong>X</strong>)</p>
-</blockquote>
-<h2>Model types</h2>
+            <section><h2>Model types</h2>
 <ul>
-<li>Supervised learning</li>
-<li>Unsupervised learning</li>
-<li>Semi-supervised learning</li>
-<li>Re-inforcement learning</li>
+<li>
+<p>Supervised learning</p>
+</li>
+<li>
+<p>Unsupervised learning</p>
+</li>
+<li>
+<p>Semi-supervised learning</p>
+</li>
+<li>
+<p>Re-inforcement learning</p>
+</li>
 </ul>
 </section>
             
@@ -871,7 +1020,6 @@ us what should do next time. Can you automate that insight generation ?</p>
             
               <ul>
 <li>Endeavour to understand world</li>
-<li>X is matrix, Y is vector</li>
 <li>Supervised : guided by past outcomes</li>
 <li>Not covering semi and re-inforcement</li>
 </ul>
@@ -885,7 +1033,7 @@ us what should do next time. Can you automate that insight generation ?</p>
             </aside>
             
             <aside class="page_number">
-              16/32
+              19/38
             </aside>
           </footer>
         </div>
@@ -929,7 +1077,7 @@ us what should do next time. Can you automate that insight generation ?</p>
             </aside>
             
             <aside class="page_number">
-              17/32
+              20/38
             </aside>
           </footer>
         </div>
@@ -944,20 +1092,35 @@ us what should do next time. Can you automate that insight generation ?</p>
             
             
             <section><h2>Creating dummies</h2>
-<div class="highlight"><pre><span class="lineno">1</span> <span class="n">feature_names</span> <span class="o">=</span> <span class="n">ind</span><span class="p">[[</span><span class="s">&#39;life_stage&#39;</span><span class="p">,</span> <span class="s">&#39;balance_by_age_binned&#39;</span><span class="p">,</span> <span class="s">&#39;education&#39;</span><span class="p">,</span> <span class="s">&#39;housing&#39;</span><span class="p">,</span> <span class="s">&#39;loan&#39;</span><span class="p">,</span> <span class="s">&#39;default&#39;</span><span class="p">]]</span>
-<span class="lineno">2</span> 
-<span class="lineno">3</span> <span class="c"># For every var, get dummies and eliminate one column</span>
-<span class="lineno">4</span> <span class="n">df_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">ind</span><span class="p">[</span><span class="n">var_name</span><span class="p">],</span> <span class="n">prefix</span> <span class="o">=</span> <span class="n">var_name</span><span class="p">)</span><span class="o">.</span><span class="n">ix</span><span class="p">[:,</span> <span class="mi">1</span> <span class="p">:</span> <span class="p">]</span> <span class="k">for</span> <span class="n">var_name</span> <span class="ow">in</span> <span class="n">feature_names</span><span class="p">]</span>
-<span class="lineno">5</span> 
-<span class="lineno">6</span> <span class="n">feature_mat</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">df_list</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="c"># axis = 1 is important!</span>
-<span class="lineno">7</span> 
-<span class="lineno">8</span> <span class="n">feature_mat</span><span class="o">.</span><span class="n">shape</span> <span class="c"># How many columns?</span>
-</pre></div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">feature_names</span> <span class="o">=</span> <span class="n">ind</span><span class="p">[[</span><span class="s">&#39;life_stage&#39;</span><span class="p">,</span> <span class="s">&#39;balance_by_age_binned&#39;</span><span class="p">,</span> 
+                     <span class="s">&#39;education&#39;</span><span class="p">,</span> <span class="s">&#39;housing&#39;</span><span class="p">,</span> <span class="s">&#39;loan&#39;</span><span class="p">,</span> <span class="s">&#39;default&#39;</span><span class="p">]]</span>
 
-<h2>Create target variable</h2>
-<div class="highlight"><pre><span class="lineno">1</span> <span class="n">target</span> <span class="o">=</span> <span class="n">ind</span><span class="p">[</span><span class="s">&#39;y_dummy&#39;</span><span class="p">]</span> <span class="c"># Selected a numeric dummy variable</span>
+<span class="c"># For every var, create dummies, eliminate one column</span>
+<span class="c"># Combine all data frames for all variables</span>
+
+<span class="n">df_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">ind</span><span class="p">[</span><span class="n">var</span><span class="p">],</span> <span class="n">prefix</span> <span class="o">=</span> <span class="n">var</span><span class="p">)</span><span class="o">.</span><span class="n">ix</span><span class="p">[:,</span> <span class="mi">1</span> <span class="p">:</span> <span class="p">]</span> \
+           <span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">feature_names</span><span class="p">]</span> <span class="c"># List comprehension</span>
+
+<span class="n">feature_mat</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">df_list</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="c"># axis = 1 is important!</span>
+
+<span class="n">feature_mat</span><span class="o">.</span><span class="n">shape</span> <span class="c"># How many features now ?</span>
 </pre></div>
-</section>
+</td></tr></table>
+<h2>Create target variable</h2>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">target</span> <span class="o">=</span> <span class="n">ind</span><span class="p">[</span><span class="s">&#39;y_dummy&#39;</span><span class="p">]</span> <span class="c"># Selected a numeric dummy variable</span>
+</pre></div>
+</td></tr></table></section>
             
           </div>
           <div class="presenter_notes">
@@ -973,7 +1136,7 @@ us what should do next time. Can you automate that insight generation ?</p>
             </aside>
             
             <aside class="page_number">
-              18/32
+              21/38
             </aside>
           </footer>
         </div>
@@ -988,16 +1151,53 @@ us what should do next time. Can you automate that insight generation ?</p>
             
             
             <section><h2>Decision trees</h2>
+<p>Image from www.siggraph.com</p>
+<p><img alt="Decision Trees" src="resources/dtree.png" /></p>
 <ul>
 <li>Focus on predictions, black box models</li>
 <li>Which variable achieves maximum separation ?</li>
 <li>Problem with DTrees : Overfitting</li>
-</ul>
-<h2>Random forests</h2>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              22/38
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>(continued..)</h1></header>
+            
+            
+            <section><h2>Random forests</h2>
 <ul>
-<li>Fit multiple DTrees with random samples of data</li>
-<li>Introduce randomness in variable selection</li>
-<li>Prediction by majority vote</li>
+<li>
+<p>Fit multiple DTrees with random samples of data</p>
+</li>
+<li>
+<p>Introduce randomness in variable selection</p>
+</li>
+<li>
+<p>Prediction by majority vote</p>
+</li>
 </ul>
 </section>
             
@@ -1011,7 +1211,7 @@ us what should do next time. Can you automate that insight generation ?</p>
 <li>Informal intro to random forests</li>
 <li>ENsembles :Focus on 'what data says' rather than modeling natural process</li>
 <li>DTree : Greedily select vars which achieve separation</li>
-<li>Site edwin chen</li>
+<li>Site edwin chens blog</li>
 <li>Example : give data to friend, she asks questions looking at data, gives outcome</li>
 </ul>
             
@@ -1024,7 +1224,7 @@ us what should do next time. Can you automate that insight generation ?</p>
             </aside>
             
             <aside class="page_number">
-              19/32
+              23/38
             </aside>
           </footer>
         </div>
@@ -1039,23 +1239,43 @@ us what should do next time. Can you automate that insight generation ?</p>
             
             
             <section><h2>Fit</h2>
-<div class="highlight"><pre><span class="lineno"> 1</span> <span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
-<span class="lineno"> 2</span> 
-<span class="lineno"> 3</span> <span class="n">rf</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">()</span>
-<span class="lineno"> 4</span> 
-<span class="lineno"> 5</span> <span class="n">model</span> <span class="o">=</span> <span class="n">rf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">feature_mat</span><span class="p">,</span> <span class="n">target</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
-<span class="lineno"> 6</span> 
-<span class="lineno"> 7</span> <span class="n">raw_feature_importance</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">feature_importances_</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
-<span class="lineno"> 8</span> 
-<span class="lineno"> 9</span> <span class="n">feature_importance</span> <span class="o">=</span> <span class="p">[</span><span class="nb">round</span><span class="p">(</span><span class="n">val</span> <span class="o">*</span> <span class="mf">100.0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">raw_feature_importance</span><span class="p">]</span>
-<span class="lineno">10</span> 
-<span class="lineno">11</span> <span class="k">print</span> <span class="nb">zip</span><span class="p">(</span><span class="n">feature_mat</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="n">feature_importance</span><span class="p">)</span>
-</pre></div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
 
-<h2>Simple Evaluation</h2>
-<div class="highlight"><pre><span class="lineno">1</span> <span class="n">model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">feature_mat</span><span class="p">,</span> <span class="n">target</span><span class="o">.</span><span class="n">values</span><span class="p">)</span> <span class="c"># Wow ! But wait..</span>
+<span class="n">rf</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">random_state</span> <span class="o">=</span> <span class="mi">42</span><span class="p">)</span> <span class="c"># Why random state ?</span>
+
+<span class="c"># By the way, why 42?</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">rf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">feature_mat</span><span class="p">,</span> <span class="n">target</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+
+<span class="c"># Find feature importance, print it</span>
+
+<span class="n">raw_feature_importance</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">feature_importances_</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+<span class="n">feature_importance</span> <span class="o">=</span> <span class="p">[</span><span class="nb">round</span><span class="p">(</span><span class="n">val</span> <span class="o">*</span> <span class="mf">100.0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>\
+                      <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">raw_feature_importance</span><span class="p">]</span> <span class="c"># No space after, before \</span>
+
+<span class="k">print</span> <span class="nb">zip</span><span class="p">(</span><span class="n">feature_mat</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="n">feature_importance</span><span class="p">)</span>
 </pre></div>
-</section>
+</td></tr></table>
+<h2>Simple Evaluation</h2>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">feature_mat</span><span class="p">,</span> <span class="n">target</span><span class="o">.</span><span class="n">values</span><span class="p">)</span> <span class="c"># Wow ! But wait..</span>
+</pre></div>
+</td></tr></table></section>
             
           </div>
           <div class="presenter_notes">
@@ -1071,7 +1291,7 @@ us what should do next time. Can you automate that insight generation ?</p>
             </aside>
             
             <aside class="page_number">
-              20/32
+              24/38
             </aside>
           </footer>
         </div>
@@ -1094,43 +1314,9 @@ us what should do next time. Can you automate that insight generation ?</p>
 <h2>Evaluating classifiers</h2>
 <ul>
 <li>Precision = (True Positives)/(P)</li>
-<li>Recall = (True Positives)/(P')</li>
+<li>Recall = (True Positives)/(P^)</li>
 </ul>
-<p><img alt="Confusion Matrix" src="file:///home/harshad.saykhedkar/projects/my_open_source/presentations/fifth_elephant_2014/ml_workshop/resources/two_way_table.png" /></p></section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="presentation.md">presentation.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              21/32
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: presentation.md -->
-      <div class="slide-wrapper">
-        <div class="slide has_code">
-          <div class="inner">
-            
-            <header><h1>Evaluation (continued..)</h1></header>
-            
-            
-            <section><div class="highlight"><pre><span class="lineno">1</span> <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">classification_report</span>
-<span class="lineno">2</span> 
-<span class="lineno">3</span> <span class="k">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">feature_mat</span><span class="p">),</span> <span class="n">target</span><span class="o">.</span><span class="n">values</span><span class="p">))</span>
-</pre></div>
-
+<p><img alt="Confusion Matrix" src="resources/two_way_table.png" /></p>
 </section>
             
           </div>
@@ -1153,7 +1339,71 @@ us what should do next time. Can you automate that insight generation ?</p>
             </aside>
             
             <aside class="page_number">
-              22/32
+              25/38
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Evaluation (continued..)</h1></header>
+            
+            
+            <section><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">classification_report</span>
+
+<span class="n">predictions</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">feature_mat</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_true</span> <span class="o">=</span> <span class="n">target</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>\
+            <span class="n">y_pred</span> <span class="o">=</span> <span class="n">predictions</span><span class="p">))</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">predictions</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
+<h2>Inference ?</h2>
+<ul>
+<li>
+<p>F score is [ 2 * (P*R)/(P + R)]</p>
+</li>
+<li>
+<p>We are showing only 20 odd to be respondents</p>
+</li>
+<li>
+<p>Out of 20 predicted repondents, about 12 actual , 0.6 precision</p>
+</li>
+<li>
+<p>Of about 5000 respondents covering only 12, 0.003 recall</p>
+</li>
+<li>
+<p>Model looks useless at this point of time!</p>
+</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              26/38
             </aside>
           </footer>
         </div>
@@ -1204,7 +1454,7 @@ us what should do next time. Can you automate that insight generation ?</p>
             </aside>
             
             <aside class="page_number">
-              23/32
+              27/38
             </aside>
           </footer>
         </div>
@@ -1215,19 +1465,18 @@ us what should do next time. Can you automate that insight generation ?</p>
         <div class="slide">
           <div class="inner">
             
-            <header><h1>Skewed Data in Real World</h1></header>
+            <header><h2>Asymmetric Costs</h2></header>
             
             
-            <section><h2>Asymmetric Costs</h2>
-<ul>
+            <section><ul>
 <li>
 <p>Predicting likely respondents for marketing campaigns</p>
 </li>
 <li>
-<p>Public Relations Disaster : Target pregnancy prediction model</p>
+<p>Predicting pregnancy </p>
 </li>
 <li>
-<p>Predicting likelihood of nuclear attack and launch pre-emptive strike ?</p>
+<p>Predicting likelihood of nuclear attack and launch pre-emptive strike</p>
 </li>
 </ul></section>
             
@@ -1245,7 +1494,7 @@ us what should do next time. Can you automate that insight generation ?</p>
             </aside>
             
             <aside class="page_number">
-              24/32
+              28/38
             </aside>
           </footer>
         </div>
@@ -1259,27 +1508,45 @@ us what should do next time. Can you automate that insight generation ?</p>
             <header><h1>Iteration/Better Model</h1></header>
             
             
-            <section><div class="highlight"><pre><span class="lineno"> 1</span> <span class="kn">from</span> <span class="nn">sklearn.cross_validation</span> <span class="kn">import</span> <span class="n">train_test_split</span>
-<span class="lineno"> 2</span> 
-<span class="lineno"> 3</span> <span class="n">train_feature</span><span class="p">,</span> <span class="n">test_feature</span><span class="p">,</span> <span class="n">train_target</span><span class="p">,</span> <span class="n">test_target</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">feature_mat</span><span class="p">,</span> <span class="n">target</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">42</span><span class="p">)</span>
-<span class="lineno"> 4</span> 
-<span class="lineno"> 5</span> <span class="n">wts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">5</span> <span class="k">if</span> <span class="n">y</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">else</span> <span class="mi">1</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">train_target</span><span class="p">])</span> <span class="c"># Weights</span>
-<span class="lineno"> 6</span> 
-<span class="lineno"> 7</span> <span class="n">better_rf</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">min_samples_leaf</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">n_jobs</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">verbose</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
-<span class="lineno"> 8</span> 
-<span class="lineno"> 9</span> <span class="n">better_model</span> <span class="o">=</span> <span class="n">better_rf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_feature</span><span class="p">,</span> <span class="n">train_target</span><span class="p">,</span> <span class="n">sample_weight</span> <span class="o">=</span> <span class="n">wts</span><span class="p">)</span>
-<span class="lineno">10</span> 
-<span class="lineno">11</span> <span class="k">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">better_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">train_feature</span><span class="p">),</span> <span class="n">train_target</span><span class="p">)</span> <span class="p">)</span>
-<span class="lineno">12</span> 
-<span class="lineno">13</span> <span class="k">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test_feature</span><span class="p">),</span> <span class="n">test_target</span><span class="p">)</span> <span class="p">)</span>
-</pre></div>
+            <section><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></div></td><td class="code"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">sklearn.cross_validation</span> <span class="kn">import</span> <span class="n">train_test_split</span>
 
-<h2>Inference</h2>
-<ul>
-<li>Can trade off precision and recall</li>
-<li>Default probability threshold can be changed</li>
-<li>Marketing campaigns : use lift as a metric</li>
-</ul>
+<span class="n">trn_feat</span><span class="p">,</span> <span class="n">tst_feat</span><span class="p">,</span> <span class="n">trn_tar</span><span class="p">,</span> <span class="n">tst_tar</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">feature_mat</span><span class="p">,</span>\
+                                       <span class="n">target</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.3</span><span class="p">,</span>\
+                                       <span class="n">random_state</span> <span class="o">=</span> <span class="mi">42</span><span class="p">)</span>
+
+<span class="n">wts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">9</span> <span class="k">if</span> <span class="n">y</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">else</span> <span class="mi">1</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">trn_tar</span><span class="p">])</span> <span class="c"># Weights</span>
+
+<span class="n">better_rf</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">min_samples_split</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>\
+                                   <span class="n">min_samples_leaf</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>\
+                                   <span class="n">n_jobs</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">verbose</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">better_model</span> <span class="o">=</span> <span class="n">better_rf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">trn_feat</span><span class="p">,</span> <span class="n">trn_tar</span><span class="p">,</span> <span class="n">sample_weight</span> <span class="o">=</span> <span class="n">wts</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_true</span> <span class="o">=</span> <span class="n">trn_tar</span><span class="p">,</span>\
+                            <span class="n">y_pred</span> <span class="o">=</span> <span class="n">better_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">trn_feat</span><span class="p">))</span> <span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_true</span> <span class="o">=</span> <span class="n">tst_tar</span><span class="p">,</span>\
+                            <span class="n">y_pred</span> <span class="o">=</span> <span class="n">better_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">tst_feat</span><span class="p">))</span> <span class="p">)</span>
+</pre></div>
+</td></tr></table>
 </section>
             
           </div>
@@ -1302,7 +1569,60 @@ us what should do next time. Can you automate that insight generation ?</p>
             </aside>
             
             <aside class="page_number">
-              25/32
+              29/38
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Iteration (continued...)</h1></header>
+            
+            
+            <section><h2>Inference</h2>
+<ul>
+<li>
+<p>Slightly better (better recall)</p>
+</li>
+<li>
+<p>But poor precision (we are predicting large # to be respondents)</p>
+</li>
+</ul>
+<h2>Actions ?</h2>
+<ul>
+<li>
+<p>Can trade off precision and recall : change probability threshold</p>
+</li>
+<li>
+<p>Keep tweaking on parameters</p>
+</li>
+<li>
+<p>If not improving significantly : need more features (same as this case)</p>
+</li>
+<li>
+<p>Marketing campaigns : use lift as a metric</p>
+</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              30/38
             </aside>
           </footer>
         </div>
@@ -1342,7 +1662,49 @@ us what should do next time. Can you automate that insight generation ?</p>
             </aside>
             
             <aside class="page_number">
-              26/32
+              31/38
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>K-means Clustering</h1></header>
+            
+            
+            <section><h2>How does it work ?</h2>
+<p>Image from mathworks</p>
+<p><img alt="K-means clustering" src="resources/kmeans.png" /></p>
+<ul>
+<li>Distance as a measure of similarity</li>
+<li>EM steps<ol>
+<li>Randomly choose centroids</li>
+<li>Assign points to nearest centroids</li>
+<li>Calculate centroids, re-assign to nearest cluster</li>
+<li>Repeat 3 till convergence</li>
+</ol>
+</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              32/38
             </aside>
           </footer>
         </div>
@@ -1353,39 +1715,49 @@ us what should do next time. Can you automate that insight generation ?</p>
         <div class="slide has_code">
           <div class="inner">
             
-            <header><h1>K-mean clustering</h1></header>
+            <header><h1>Example</h1></header>
             
             
-            <section><h2>How does it work ?</h2>
-<ul>
-<li>Distance as a measure of similarity</li>
-<li>Randomly partition</li>
-<li>Re-calculate centroids, re-assign</li>
-</ul>
-<h2>Customer segmentation on data</h2>
-<div class="highlight"><pre><span class="lineno"> 1</span> <span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">preprocessing</span>
-<span class="lineno"> 2</span> 
-<span class="lineno"> 3</span> <span class="n">lookup</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;yes&#39;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">&#39;no&#39;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
-<span class="lineno"> 4</span> 
-<span class="lineno"> 5</span> <span class="n">ind</span><span class="p">[</span><span class="s">&#39;housing_dummy&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ind</span><span class="p">[</span><span class="s">&#39;housing&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">lamda</span> <span class="n">x</span><span class="p">:</span> <span class="n">lookup</span><span class="p">[</span><span class="n">x</span><span class="p">])</span>
-<span class="lineno"> 6</span> 
-<span class="lineno"> 7</span> <span class="n">econ_data</span> <span class="o">=</span> <span class="n">ind</span><span class="p">[[</span><span class="s">&#39;balance_by_age&#39;</span><span class="p">,</span> <span class="s">&#39;housing_dummy&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">as_matrix</span><span class="p">()</span>
-<span class="lineno"> 8</span> 
-<span class="lineno"> 9</span> <span class="n">econ_data_scaled</span> <span class="o">=</span> <span class="n">preprocessing</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="n">econ_data</span><span class="p">)</span>
-<span class="lineno">10</span> 
-<span class="lineno">11</span> <span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">cluster</span>
-<span class="lineno">12</span> 
-<span class="lineno">13</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">3</span> <span class="c"># Conventional wisdom of low-middle-wealthy class</span>
-<span class="lineno">14</span> 
-<span class="lineno">15</span> <span class="n">kmeans</span> <span class="o">=</span> <span class="n">cluster</span><span class="o">.</span><span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span> <span class="o">=</span> <span class="n">k</span><span class="p">)</span>
-<span class="lineno">16</span> 
-<span class="lineno">17</span> <span class="n">kmeans</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">econ_data_scaled</span><span class="p">)</span>
-<span class="lineno">18</span> 
-<span class="lineno">19</span> <span class="n">predicted</span> <span class="o">=</span> <span class="n">kmeans</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">econ_data_scaled</span><span class="p">)</span>
-<span class="lineno">20</span> 
-<span class="lineno">21</span> <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">econ_data_scaled</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">econ_data_scaled</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span> <span class="o">=</span> <span class="n">y_pred</span><span class="p">)</span>
-</pre></div>
+            <section><h2>Customer segmentation on data</h2>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">preprocessing</span>
 
+<span class="n">econ_data</span> <span class="o">=</span> <span class="n">ind</span><span class="p">[[</span><span class="s">&#39;age&#39;</span><span class="p">,</span> <span class="s">&#39;balance&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">as_matrix</span><span class="p">()</span>
+<span class="n">econ_data_scaled</span> <span class="o">=</span> <span class="n">preprocessing</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="n">econ_data</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">cluster</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mi">3</span> <span class="c"># Conventional wisdom of low-middle-wealthy class</span>
+
+<span class="n">kmeans</span> <span class="o">=</span> <span class="n">cluster</span><span class="o">.</span><span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span> <span class="o">=</span> <span class="n">k</span><span class="p">)</span>
+<span class="n">kmeans</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">econ_data_scaled</span><span class="p">)</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">kmeans</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">econ_data_scaled</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">econ_data_scaled</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">econ_data_scaled</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span> <span class="o">=</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Scaled Age&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;Scaled Balance&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</td></tr></table>
+<h2>Tips</h2>
+<ul>
+<li>Deciding # of clusters is a huge research topic</li>
+<li>More clustering methods available (mini batch k-means, hierarchial clustering)</li>
+<li>Clustering is exploratory and iterative : no good answer</li>
+</ul>
 </section>
             
           </div>
@@ -1396,8 +1768,6 @@ us what should do next time. Can you automate that insight generation ?</p>
               <ul>
 <li>Task : clusters based on socio-economic condition</li>
 <li>Trivial example : only two vars help vizualize</li>
-<li>Not good way : MIXING linear and binary var.</li>
-<li>Binary vars have different variance</li>
 </ul>
             
             </section>
@@ -1409,7 +1779,7 @@ us what should do next time. Can you automate that insight generation ?</p>
             </aside>
             
             <aside class="page_number">
-              27/32
+              33/38
             </aside>
           </footer>
         </div>
@@ -1459,7 +1829,7 @@ us what should do next time. Can you automate that insight generation ?</p>
             </aside>
             
             <aside class="page_number">
-              28/32
+              34/38
             </aside>
           </footer>
         </div>
@@ -1473,7 +1843,7 @@ us what should do next time. Can you automate that insight generation ?</p>
             <header><h1>Vector Space Representation</h1></header>
             
             
-            <section><p><img alt="Vector Space Model" src="file:///home/harshad.saykhedkar/projects/my_open_source/presentations/fifth_elephant_2014/ml_workshop/resources/vector_space_model.png" /></p>
+            <section><p><img alt="Vector Space Model" src="resources/vector_space_model.png" /></p>
 <h2>Representations</h2>
 <ul>
 <li>
@@ -1498,7 +1868,7 @@ us what should do next time. Can you automate that insight generation ?</p>
 <li>ML needs vector space : distance, similarity etc</li>
 <li>Text : documents as points</li>
 <li>Image : pixels as axis , NON-LINEAR COMBOS Neural networks</li>
-<li>Videos : I'm not sure, time varying data , 4D space</li>
+<li>Videos : not sure, time varying data , 4D space</li>
 </ul>
             
             </section>
@@ -1510,7 +1880,7 @@ us what should do next time. Can you automate that insight generation ?</p>
             </aside>
             
             <aside class="page_number">
-              29/32
+              35/38
             </aside>
           </footer>
         </div>
@@ -1538,7 +1908,7 @@ us what should do next time. Can you automate that insight generation ?</p>
 <p>Fallacy of automated no-brains machine learning</p>
 </li>
 <li>
-<p>Means (big data tools) Vs. insights</p>
+<p>Means (big data tools) Vs. Ends (insights, usable models)</p>
 </li>
 </ul></section>
             
@@ -1556,7 +1926,7 @@ us what should do next time. Can you automate that insight generation ?</p>
             </aside>
             
             <aside class="page_number">
-              30/32
+              36/38
             </aside>
           </footer>
         </div>
@@ -1594,7 +1964,7 @@ us what should do next time. Can you automate that insight generation ?</p>
             </aside>
             
             <aside class="page_number">
-              31/32
+              37/38
             </aside>
           </footer>
         </div>
@@ -1607,6 +1977,9 @@ us what should do next time. Can you automate that insight generation ?</p>
             
             <header><h1>Questions ??</h1></header>
             
+            
+            <section><h2>Drop me a line: harshad dot saykhedkar AT sokrati dot com</h2>
+<h2>Shamless plug : We are hiring data scientist @ Sokrati</h2></section>
             
           </div>
           <div class="presenter_notes">
@@ -1622,7 +1995,7 @@ us what should do next time. Can you automate that insight generation ?</p>
             </aside>
             
             <aside class="page_number">
-              32/32
+              38/38
             </aside>
           </footer>
         </div>
@@ -1643,13 +2016,13 @@ us what should do next time. Can you automate that insight generation ?</p>
       
       
       <tr id="toc-row-2">
-        <th><a href="#slide2">About Me...</a></th>
+        <th><a href="#slide2">About Me</a></th>
         <td><a href="#slide2">2</a></td>
       </tr>
       
       
       <tr id="toc-row-3">
-        <th><a href="#slide3">Workshop Agenda</a></th>
+        <th><a href="#slide3">Conference Agenda</a></th>
         <td><a href="#slide3">3</a></td>
       </tr>
       
@@ -1679,152 +2052,189 @@ us what should do next time. Can you automate that insight generation ?</p>
       
       
       <tr id="toc-row-8">
-        <th><a href="#slide8">Start!</a></th>
+        <th><a href="#slide8">First Date!</a></th>
         <td><a href="#slide8">8</a></td>
       </tr>
       
       
       <tr id="toc-row-9">
-        <th><a href="#slide9">Drilling Down</a></th>
+        <th><a href="#slide9">Second Date!</a></th>
         <td><a href="#slide9">9</a></td>
       </tr>
       
       
       <tr id="toc-row-10">
-        <th><a href="#slide10">Dissecting Single Variable</a></th>
+        <th><a href="#slide10">Drilling Down</a></th>
         <td><a href="#slide10">10</a></td>
       </tr>
       
       
       <tr id="toc-row-11">
-        <th><a href="#slide11">Introduction to Data Transformations</a></th>
+        <th><a href="#slide11">Dissecting Single Variable</a></th>
         <td><a href="#slide11">11</a></td>
       </tr>
       
       
       <tr id="toc-row-12">
-        <th><a href="#slide12">Initial Line of Attack</a></th>
+        <th><a href="#slide12">Introduction to Data Transformations</a></th>
         <td><a href="#slide12">12</a></td>
       </tr>
       
       
       <tr id="toc-row-13">
-        <th><a href="#slide13">Grouping and Aggregation</a></th>
+        <th><a href="#slide13">Initial Line of Attack</a></th>
         <td><a href="#slide13">13</a></td>
       </tr>
       
       
       <tr id="toc-row-14">
-        <th><a href="#slide14">Outlier Treatments and Missing Data</a></th>
+        <th><a href="#slide14">Grouping and Aggregation</a></th>
         <td><a href="#slide14">14</a></td>
       </tr>
       
       
       <tr id="toc-row-15">
-        <th><a href="#slide15">Feature Engineering</a></th>
+        <th><a href="#slide15">Grouping and Aggregation</a></th>
         <td><a href="#slide15">15</a></td>
       </tr>
       
       
       <tr id="toc-row-16">
-        <th><a href="#slide16">Modeling</a></th>
+        <th><a href="#slide16">Outlier Treatments and Missing Data</a></th>
         <td><a href="#slide16">16</a></td>
       </tr>
       
       
       <tr id="toc-row-17">
-        <th><a href="#slide17">Stats Vs. ML Culture</a></th>
+        <th><a href="#slide17">Feature Engineering</a></th>
         <td><a href="#slide17">17</a></td>
       </tr>
       
       
       <tr id="toc-row-18">
-        <th><a href="#slide18">Feature and Target Data</a></th>
+        <th><a href="#slide18">Feature Engineering (continued..)</a></th>
         <td><a href="#slide18">18</a></td>
       </tr>
       
       
       <tr id="toc-row-19">
-        <th><a href="#slide19">Introduction to Random Forests</a></th>
+        <th><a href="#slide19">Modeling</a></th>
         <td><a href="#slide19">19</a></td>
       </tr>
       
       
       <tr id="toc-row-20">
-        <th><a href="#slide20">Fitting and Simple Evaluation</a></th>
+        <th><a href="#slide20">Stats Vs. ML Culture</a></th>
         <td><a href="#slide20">20</a></td>
       </tr>
       
       
       <tr id="toc-row-21">
-        <th><a href="#slide21">Evaluation</a></th>
+        <th><a href="#slide21">Feature and Target Data</a></th>
         <td><a href="#slide21">21</a></td>
       </tr>
       
       
       <tr id="toc-row-22">
-        <th><a href="#slide22">Evaluation (continued..)</a></th>
+        <th><a href="#slide22">Introduction to Random Forests</a></th>
         <td><a href="#slide22">22</a></td>
       </tr>
       
       
       <tr id="toc-row-23">
-        <th><a href="#slide23">Evaluation and Bias-Variance</a></th>
+        <th><a href="#slide23">(continued..)</a></th>
         <td><a href="#slide23">23</a></td>
       </tr>
       
       
       <tr id="toc-row-24">
-        <th><a href="#slide24">Skewed Data in Real World</a></th>
+        <th><a href="#slide24">Fitting and Simple Evaluation</a></th>
         <td><a href="#slide24">24</a></td>
       </tr>
       
       
       <tr id="toc-row-25">
-        <th><a href="#slide25">Iteration/Better Model</a></th>
+        <th><a href="#slide25">Evaluation</a></th>
         <td><a href="#slide25">25</a></td>
       </tr>
       
       
       <tr id="toc-row-26">
-        <th><a href="#slide26">Introduction to Unsupervised Learning</a></th>
+        <th><a href="#slide26">Evaluation (continued..)</a></th>
         <td><a href="#slide26">26</a></td>
       </tr>
       
       
       <tr id="toc-row-27">
-        <th><a href="#slide27">K-mean clustering</a></th>
+        <th><a href="#slide27">Evaluation and Bias-Variance</a></th>
         <td><a href="#slide27">27</a></td>
       </tr>
       
-      
-      <tr id="toc-row-28">
-        <th><a href="#slide28">Curse of Unstructured Data</a></th>
-        <td><a href="#slide28">28</a></td>
-      </tr>
+        
+        <tr id="toc-row-28" class="sub">
+          <th><a href="#slide28">Asymmetric Costs</a></th>
+          <td><a href="#slide28">28</a></td>
+        </tr>
+        
       
       
       <tr id="toc-row-29">
-        <th><a href="#slide29">Vector Space Representation</a></th>
+        <th><a href="#slide29">Iteration/Better Model</a></th>
         <td><a href="#slide29">29</a></td>
       </tr>
       
       
       <tr id="toc-row-30">
-        <th><a href="#slide30">Real World Tips</a></th>
+        <th><a href="#slide30">Iteration (continued...)</a></th>
         <td><a href="#slide30">30</a></td>
       </tr>
       
       
       <tr id="toc-row-31">
-        <th><a href="#slide31">Recap</a></th>
+        <th><a href="#slide31">Introduction to Unsupervised Learning</a></th>
         <td><a href="#slide31">31</a></td>
       </tr>
       
       
       <tr id="toc-row-32">
-        <th><a href="#slide32">Questions ??</a></th>
+        <th><a href="#slide32">K-means Clustering</a></th>
         <td><a href="#slide32">32</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-33">
+        <th><a href="#slide33">Example</a></th>
+        <td><a href="#slide33">33</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-34">
+        <th><a href="#slide34">Curse of Unstructured Data</a></th>
+        <td><a href="#slide34">34</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-35">
+        <th><a href="#slide35">Vector Space Representation</a></th>
+        <td><a href="#slide35">35</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-36">
+        <th><a href="#slide36">Real World Tips</a></th>
+        <td><a href="#slide36">36</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-37">
+        <th><a href="#slide37">Recap</a></th>
+        <td><a href="#slide37">37</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-38">
+        <th><a href="#slide38">Questions ??</a></th>
+        <td><a href="#slide38">38</a></td>
       </tr>
       
       

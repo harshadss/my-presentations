@@ -2,30 +2,31 @@
 
 ---
 
-# About Me...
+# About Me
 
-Harshad
+## Harshad
 
-* Senior Data Scientist @ SOKRATI
-
-* Spent last 4 years trying to understand machine learning
+* Me : Senior Data Scientist @ SOKRATI, Pune
+* SOKRATI : Advertising domain startup
+* My job : Making sense of click stream data 
+* My experience : advertising world, telecom and BFSI earlier
+* My tools : Python, R and Clojure
 
 ---
 
-# Workshop Agenda
+# Conference Agenda
 
 Machine learning is *not only* about mathematical algorithms or tools or 
 vizualizations or business knowledge.
-
 
 >You cannot play a symphony alone, it takes an orchestra
 
 It involves balance of,
 
-   1. Science
-   2. Process
-   3. Engineering
-   4. Art
+   1. **Science** (how does the library "fit" a regression?, where does the cost function come from?)
+   2. **Process** (how do I go from start/data to end/usable model?)
+   3. **Engineering** (how do I work on billion data points? How do I store them?)
+   4. **Art** (Black magic.. wodoo! On a serious note, is there a better data model?)
 
 # Presenter Notes
 
@@ -35,7 +36,7 @@ Books and courses focus on science.
 Tool and library developers focus on engineering
 A real world ML problem : needs knowledge of each aspect
 Workshop and conference themed around the 4 aspects
-Workshop later on science (R) and engineering (solr, aerospike)
+Workshop on science (R) and engineering (solr, aerospike)
 My talk on some aspects of engineering at conference, many other talks
 Closing talk on art
 
@@ -55,7 +56,6 @@ Closing talk on art
 * Process sounds bureaucratic, but useful
 * mixture of curiosity and common sense
 * driven from past experiences of community
-
 ---
 
 # What Process ?
@@ -63,13 +63,13 @@ Closing talk on art
 ## A real world problem
 
 > We want to sell a product to customers through telemarketing. The last time we did 
-a carpet bombing exercise. Here are bunch of data point from the effort. Tell
+a carpet bombing exercise. Here are bunch of data points from the effort. Tell
 us what should do next time. Can you automate that insight generation ?
 
 ## Flurry of questions...
 
-* Where to start ?
-* What am I supposed to model ?
+* Where do we start ?
+* What are we supposed to model ?
 * What algorithm is better suited for this ?
 * Do we have too much data ? How do I know that ?
 * Do we have too little data ? How do I know that ?
@@ -78,8 +78,8 @@ us what should do next time. Can you automate that insight generation ?
 
 * Typical questions
 * Process : systematic way of answering questions
+* Other vendors call it something else : SEMMA, CRISP-DM
 * Bottom line : useful and practical
-
 ---
 
 # Typical Process
@@ -94,12 +94,8 @@ us what should do next time. Can you automate that insight generation ?
 
 # Presenter Notes
 
-* Derived through experience
-
-* Known by other names (CRISP-DM etc.)
-
+* Not a science, but a good set of best practices
 * Not covering get data , *conference*
-
 --- 
 
 # Objective
@@ -107,6 +103,7 @@ us what should do next time. Can you automate that insight generation ?
 ## Dataset background
 
 [https://github.com/harshadss/my-presentations](https://github.com/harshadss/my-presentations)
+[https://archive.ics.uci.edu/ml/datasets/Bank+Marketing](https://archive.ics.uci.edu/ml/datasets/Bank+Marketing)
 
 * Bank marketing campaign data (S. Moro, P. Cortez and P. Rita, Jun 2014)
 
@@ -117,12 +114,11 @@ us what should do next time. Can you automate that insight generation ?
 # Presenter Notes
 
 * Those who do not have : download from github or UCI ML repo
-
 * Portugese bank, wants to sell deposit products, generalize to any marketing
-
+* Classic classification problem
 ---
 
-# Start!
+# First Date!
 
 ## Read the data
 
@@ -131,10 +127,9 @@ us what should do next time. Can you automate that insight generation ?
 
     import pandas as pd
 
-    bank_file = './bank-full.csv'
+    bank_file = './bank-full.csv' # Set to appropriate path
 
     ind = pd.read_csv(bank_file, header = 0, delimiter = ';')
-
 
 ## Handshake with data
 
@@ -146,12 +141,18 @@ us what should do next time. Can you automate that insight generation ?
 
     ind.dtypes # Are the columns read correctly ?
 
+---
+
+# Second Date!
+
 ## Checking few observations
 
     !python
     ind.head()
 
     ind.tail() 
+
+    # Subsetting in Pandas is different from R
 
     ind[1:10] # Only does rows subsetting
 
@@ -161,12 +162,12 @@ us what should do next time. Can you automate that insight generation ?
 
 # Presenter Notes
 
+* First date with our data 
 * First hassle : read data, delimiters, can be other sources like db
 * Top level view of data : shape, type of variables, dimensions
 * Explain vars
 * If rows too small, if columns > rows
 * mental scan : what the cols are, types (demog, socio-economic)
-
 ---
 
 # Drilling Down
@@ -204,7 +205,6 @@ us what should do next time. Can you automate that insight generation ?
 * If mean and median close : no skewness
 * Balance : skewed, outliers
 * Tip : Man made variables more likely to have outliers, use median to summarize
-
 ---
 
 # Dissecting Single Variable
@@ -220,15 +220,12 @@ Percentiles are excellent way of summarizing distribution of data
 
     !python
     np.arange(0, 1, 0.1)
+
     np.arange(0, 1.1, 0.1) # arange is not right inclusive
+
     dist = ind['balance'].quantile(np.arange(0, 1.1, 0.1)) # Skewed distributions ?
+
     dist
-    import matplotlib.pyplot as pl
-    pl.plot(dist)
-    pl.show()
-
-## Check outliers on lower end
-
 --- 
 
 # Introduction to Data Transformations
@@ -237,25 +234,23 @@ Information rarely useful as-is, need to transform
 
     !python
     y_n_lookup = {'yes' : 1, 'no' : 0}
+
     ind['y_dummy'] = ind['y'].map(lambda x: y_n_lookup[x] )
+
     ind['y_dummy'].describe()
 
 ## How does it work ?
 
 * Lambdas : anonymous functions
-
-* Create a map holding transformation
-
-* map applies the transformation to every row
+* Create a dictionary holding transformation
+* Map method on DF applies the transformation to every row
+* Think of map-reduce in memory
 
 # Presenter Notes
 
 * Transformations are very important, Need to quickly identify transformations
-
 * What is being done : map phase of map-reduce in memory
-
 * Lambda is anonymous function : avoids writing separate function
-
 ---
 
 # Initial Line of Attack
@@ -271,51 +266,56 @@ Information rarely useful as-is, need to transform
 
 # Presenter Notes
 * Explain line of attack : demog, socio-economic vars
-
 * Essentially about validating common sense/gut feeling
-
 * Deposits are risk free products : should young people buy it ? not clear
-
 * Motivate need of grouping, aggregation
-
 ---
 
 # Grouping and Aggregation
+
+Image courtesy of book Python for Data Analysis, Wes McKinney
 
 ![Split Apply Combine](resources/split_apply_combine1.png)
 
 # Presenter Notes
 
 * Concept similar to mapreduce
-
 * Example of marital status : divide by marital status, average, combine
 
+---
 # Grouping and Aggregation
 
 ## Does marital status affect outcome ?
 
     !python
     ind['marital'].value_counts()
+
     gb_marital = ind['y_dummy'].groupby(ind['marital'])
+
     gb_marital.mean()
 
 ## Does age affect outcome with marital status ?
 
     !python
-    age_group_names = ['Young', 'Lower Middle', 'Middle', 'Senior']
+    age_group_names = ['young', 'lower middle', 'middle', 'senior']
+
     ind['age_binned'] = pd.qcut(ind['age'], 4, labels = age_group_names)
+
     ind['age_binned'].value_counts()
-    gb_marital_age = ind['y_dummy'].groupby(ind['marital'], ind['age_binned'] )
+
+    gb_marital_age = ind['y_dummy'].groupby([ind['marital'],  \
+                     ind['age_binned']] ) # List of keys
+
     gb_marital_age.mean() # Oops!
+
     gb_marital_age.mean().unstack()
+
     gb_marital_age.count().unstack() # Check if enough samples in each group
 
 # Presenter Notes
 
 * Meaty part
-
 * Even if you have large # of vars : youd have some gut feel on what works
-
 * Stark difference by age + marital status
 
 ---
@@ -327,11 +327,12 @@ Information rarely useful as-is, need to transform
     !python
     top_end = ind['balance'].quantile(np.arange(0.9, 1.01, 0.01)) # Top 10 
     top_end
-    pl.plot(top_end.index, top_end.values) # Accesing index
-    pl.show()
-    pl.plot(top_end.index, top_end.values)
-    pl.axis([0.9, 0.99, 0, 20000])
-    pl.show() # Now a much better plot
+    import matplotlib.pyplot as plt
+    plt.plot(top_end.index, top_end.values) # Accesing index
+    plt.show()
+    plt.plot(top_end.index, top_end.values)
+    plt.axis([0.9, 0.99, 0, 20000])
+    plt.show() # Now a much better plot
 
 ## Removing outliers
 
@@ -343,16 +344,13 @@ Information rarely useful as-is, need to transform
 
 * Replace with median/mean of column
 * Replace with zero
-* Drop column if more than 30%-40% data missing
 * Convert to bins and keep missing as separate bin
 
 # Presenter Notes
 
 * Why outliers removed : algos are sensitive (e.g. kmeans)
-
 * Missing data is a reality, cannot keep dropping columns
-
-
+* Other strategies : building model for filling data
 ---
 
 # Feature Engineering
@@ -361,27 +359,37 @@ Information rarely useful as-is, need to transform
 
 * Looking at same information from different view
 * Helps treat non-linearities, too many categories
-* Often differentiator between good and great results
 
 ## Creating a 'life stage' variable
 
     !python
-    ind['life_stage'] = ind.apply(lambda x: x['age_binned'] + ' & ' + x['marital'], axis = 1)
+    ind['life_stage'] = ind.apply(lambda x: x['age_binned'] + \
+                                 ' & ' + x['marital'], axis = 1)
 
-    ind['life_stage'].value_counts()
+    ind['life_stage'].value_counts() # Can eliminate minor categories
 
-## Creating a ratio variable of balance to age
+---
+
+# Feature Engineering (continued..)
+
+## Creating a ratio variables
+
+* More balance at lower age => better
+* Money better off with log (disputable!, just one way of transforming)
+
+How to do it ?
 
     !python
     ind['balance_by_age'] = np.log(ind['balance'] + 10000)/(ind['age'])
 
     balance_by_age_labels = ['very low', 'low', 'medium', 'high', 'very high']
 
-    ind['balance_by_age_binned'] = pd.qcut(ind['balance_by_age'], 5, labels = balance_by_age_labels)
+    ind['balance_by_age_binned'] = pd.qcut(ind['balance_by_age'],
+                                           5, labels=balance_by_age_labels)
 
     gb_bal_by_age = ind['y_dummy'].groupby(ind['balance_by_age_binned'] )
 
-    gb_bal_by_age.mean().sort().order() # This is a huge insight again!
+    gb_bal_by_age.mean().order() # This is a huge insight again!
 
 # Presenter Notes
 
@@ -393,21 +401,19 @@ Information rarely useful as-is, need to transform
 
 # Modeling
 
-## What is modeling ?
-
-> g(Y) = f(**X**)
-
 ## Model types
 
 * Supervised learning
+
 * Unsupervised learning
+
 * Semi-supervised learning
+
 * Re-inforcement learning
 
 # Presenter Notes
 
 * Endeavour to understand world
-* X is matrix, Y is vector
 * Supervised : guided by past outcomes
 * Not covering semi and re-inforcement
 
@@ -424,7 +430,6 @@ Information rarely useful as-is, need to transform
     1. Focus on 'good predictions'
     2. Cross validations, ensemble of models, bias-variance
     3. neural networks, tree based models
-
 ---
 
 # Feature and Target Data
@@ -432,14 +437,18 @@ Information rarely useful as-is, need to transform
 ## Creating dummies
 
     !python
-    feature_names = ind[['life_stage', 'balance_by_age_binned', 'education', 'housing', 'loan', 'default']]
+    feature_names = ind[['life_stage', 'balance_by_age_binned', 
+                         'education', 'housing', 'loan', 'default']]
 
-    # For every var, get dummies and eliminate one column
-    df_list = [pd.get_dummies(ind[var_name], prefix = var_name).ix[:, 1 : ] for var_name in feature_names]
+    # For every var, create dummies, eliminate one column
+    # Combine all data frames for all variables
+
+    df_list = [pd.get_dummies(ind[var], prefix = var).ix[:, 1 : ] \
+               for var in feature_names] # List comprehension
 
     feature_mat = pd.concat(df_list, axis = 1) # axis = 1 is important!
 
-    feature_mat.shape # How many columns?
+    feature_mat.shape # How many features now ?
 
 ## Create target variable
 
@@ -452,14 +461,24 @@ Information rarely useful as-is, need to transform
 
 ## Decision trees
 
+Image from www.siggraph.com
+
+![Decision Trees](resources/dtree.png)
+
 * Focus on predictions, black box models
 * Which variable achieves maximum separation ?
 * Problem with DTrees : Overfitting
 
+---
+
+# (continued..)
+
 ## Random forests
 
 * Fit multiple DTrees with random samples of data
+
 * Introduce randomness in variable selection
+
 * Prediction by majority vote
 
 # Presenter Notes
@@ -467,7 +486,7 @@ Information rarely useful as-is, need to transform
 * Informal intro to random forests
 * ENsembles :Focus on 'what data says' rather than modeling natural process
 * DTree : Greedily select vars which achieve separation
-* Site edwin chen
+* Site edwin chens blog
 * Example : give data to friend, she asks questions looking at data, gives outcome
 
 ---
@@ -479,13 +498,18 @@ Information rarely useful as-is, need to transform
     !python
     from sklearn.ensemble import RandomForestClassifier
 
-    rf = RandomForestClassifier()
+    rf = RandomForestClassifier(random_state = 42) # Why random state ? 
+
+    # By the way, why 42?
 
     model = rf.fit(feature_mat, target.values)
 
+    # Find feature importance, print it
+
     raw_feature_importance = model.feature_importances_.tolist()
 
-    feature_importance = [round(val * 100.0, 2) for val in raw_feature_importance]
+    feature_importance = [round(val * 100.0, 2)\
+                          for val in raw_feature_importance] # No space after, before \
 
     print zip(feature_mat.columns, feature_importance)
 
@@ -507,9 +531,15 @@ Information rarely useful as-is, need to transform
 ## Evaluating classifiers
 
 * Precision = (True Positives)/(P)
-* Recall = (True Positives)/(P')
+* Recall = (True Positives)/(P^)
 
 ![Confusion Matrix](resources/two_way_table.png)
+
+# Presenter Notes
+
+* Precision : predicted one, how many actually are ?
+* Recall : of all ones, how many covered ?
+* Cite Andrew Ngs course for better details
 
 ---
 
@@ -518,14 +548,25 @@ Information rarely useful as-is, need to transform
     !python
     from sklearn.metrics import classification_report
 
-    print(classification_report(model.predict(feature_mat), target.values))
+    predictions = model.predict(feature_mat)
 
-# Presenter Notes
+    print(classification_report(y_true = target.values,\
+                y_pred = predictions))
 
-* Precision : predicted one, how many actually are ?
-* Recall : of all ones, how many covered ?
-* Cite Andrew Ngs course for better details
+    np.sum(predictions)
 
+
+## Inference ?
+
+* F score is [ 2 * (P*R)/(P + R)]
+
+* We are showing only 20 odd to be respondents
+
+* Out of 20 predicted repondents, about 12 actual , 0.6 precision
+
+* Of about 5000 respondents covering only 12, 0.003 recall
+
+* Model looks useless at this point of time!
 
 ---
 
@@ -549,18 +590,15 @@ Test on dataset with no degrees of freedom
 * Model fitting is optimization routine : so need degree of freedom = 0
 * On train data : I can keep tuning params to achieve good fit
 
-
 ---
-
-# Skewed Data in Real World
 
 ## Asymmetric Costs
 
 * Predicting likely respondents for marketing campaigns
 
-* Public Relations Disaster : Target pregnancy prediction model
+* Predicting pregnancy 
 
-* Predicting likelihood of nuclear attack and launch pre-emptive strike ?
+* Predicting likelihood of nuclear attack and launch pre-emptive strike
 
 --- 
 
@@ -569,23 +607,23 @@ Test on dataset with no degrees of freedom
     !python
     from sklearn.cross_validation import train_test_split
 
-    train_feature, test_feature, train_target, test_target = train_test_split(feature_mat, target.values, test_size = 0.3, random_state = 42)
+    trn_feat, tst_feat, trn_tar, tst_tar = train_test_split(feature_mat,\
+                                           target.values, test_size = 0.3,\
+                                           random_state = 42)
 
-    wts = np.array([5 if y == 1 else 1 for y in train_target]) # Weights  
+    wts = np.array([9 if y == 1 else 1 for y in trn_tar]) # Weights  
 
-    better_rf = RandomForestClassifier(min_samples_leaf = 10, n_jobs = -1, verbose = 1)
+    better_rf = RandomForestClassifier(min_samples_split = 10,\
+                                       min_samples_leaf = 10,\
+                                       n_jobs = -1, verbose = 1)
 
-    better_model = better_rf.fit(train_feature, train_target, sample_weight = wts)
+    better_model = better_rf.fit(trn_feat, trn_tar, sample_weight = wts)
 
-    print(classification_report(better_model.predict(train_feature), train_target) )
+    print(classification_report(y_true = trn_tar,\
+                                y_pred = better_model.predict(trn_feat)) )
 
-    print(classification_report(model.predict(test_feature), test_target) )
-
-## Inference
-
-* Can trade off precision and recall
-* Default probability threshold can be changed
-* Marketing campaigns : use lift as a metric
+    print(classification_report(y_true = tst_tar,\
+                                y_pred = better_model.predict(tst_feat)) )
 
 # Presenter Notes
 
@@ -595,6 +633,25 @@ Test on dataset with no degrees of freedom
 
 ---
 
+# Iteration (continued...)
+
+## Inference
+
+* Slightly better (better recall)
+
+* But poor precision (we are predicting large # to be respondents)
+
+## Actions ?
+
+* Can trade off precision and recall : change probability threshold
+
+* Keep tweaking on parameters
+
+* If not improving significantly : need more features (same as this case)
+
+* Marketing campaigns : use lift as a metric
+
+---
 # Introduction to Unsupervised Learning
 
 ## Idea
@@ -610,45 +667,55 @@ Test on dataset with no degrees of freedom
 
 ---
 
-# K-mean clustering
+# K-means Clustering
 
 ## How does it work ?
 
+Image from mathworks
+
+![K-means clustering](resources/kmeans.png)
+
 * Distance as a measure of similarity
-* Randomly partition
-* Re-calculate centroids, re-assign
+* EM steps
+    1. Randomly choose centroids
+    2. Assign points to nearest centroids
+    3. Calculate centroids, re-assign to nearest cluster
+    4. Repeat 3 till convergence
+---
+
+# Example
 
 ## Customer segmentation on data
 
     !python
     from sklearn import preprocessing
 
-    lookup = {'yes' : 1, 'no' : 0}
-
-    ind['housing_dummy'] = ind['housing'].map(lamda x: lookup[x])
-
-    econ_data = ind[['balance_by_age', 'housing_dummy']].as_matrix()
-
+    econ_data = ind[['age', 'balance']].as_matrix()
     econ_data_scaled = preprocessing.scale(econ_data)
 
     from sklearn import cluster
-
     k = 3 # Conventional wisdom of low-middle-wealthy class
 
     kmeans = cluster.KMeans(n_clusters = k)
-
     kmeans.fit(econ_data_scaled)
-
-    predicted = kmeans.predict(econ_data_scaled)
+    y_pred = kmeans.predict(econ_data_scaled)
 
     plt.scatter(econ_data_scaled[:, 0], econ_data_scaled[:, 1], c = y_pred)
+    plt.xlabel('Scaled Age')
+    plt.ylabel('Scaled Balance')
+    plt.show()
+
+## Tips
+
+* Deciding # of clusters is a huge research topic
+* More clustering methods available (mini batch k-means, hierarchial clustering)
+* Clustering is exploratory and iterative : no good answer
+
 
 # Presenter Notes
 
 * Task : clusters based on socio-economic condition
 * Trivial example : only two vars help vizualize
-* Not good way : MIXING linear and binary var.
-* Binary vars have different variance
 
 ---
 
@@ -688,8 +755,7 @@ Test on dataset with no degrees of freedom
 * ML needs vector space : distance, similarity etc
 * Text : documents as points
 * Image : pixels as axis , NON-LINEAR COMBOS Neural networks
-* Videos : I'm not sure, time varying data , 4D space
-
+* Videos : not sure, time varying data , 4D space
 ---
 
 # Real World Tips
@@ -702,7 +768,7 @@ Test on dataset with no degrees of freedom
 
 * Fallacy of automated no-brains machine learning
 
-* Means (big data tools) Vs. insights
+* Means (big data tools) Vs. Ends (insights, usable models)
 
 ---
 
@@ -715,7 +781,10 @@ Test on dataset with no degrees of freedom
 * Evaluate
 * Iterate
 * Validate
-
 ---
 
 # Questions ??
+
+## Drop me a line: harshad dot saykhedkar AT sokrati dot com
+
+## Shamless plug : We are hiring data scientist @ Sokrati
