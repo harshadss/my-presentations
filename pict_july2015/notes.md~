@@ -1,0 +1,31 @@
+# What to cover?
+
+> 1 slide on sokrati
+> why we need NLP?
+> how is our flavour of NLP different
+  > short length
+  > non-standard grammar
+
+# Problem 1: entity recognition
+ > why sokrati needs it
+ > naive approach: large scale vector representation + classifiers
+ > what are the approaches used
+ > what approaches could be used
+
+# Problem 2: large scale text categorization
+ > why sokrati needs it
+ > what are the approaches used
+ > introduction to LDA
+ > challenges
+
+# Introduction to deep learning for NLP
+ > why is it needed (internationalization, lack of supervised data,
+   changing grammar of the language)
+ > basics: word embeddings etc.
+ > diagram of nlp from scratch
+ > short demo
+
+# Future work/interesting problems
+ > large scale categorization: hierarchical classification
+ > named entities: noise reduction
+ > taking deep learning further
