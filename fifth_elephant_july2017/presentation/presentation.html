@@ -25,7 +25,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Introduction to Recommendation Systems</title>
+    <title>Introduction to Recommendation Systems using <strong>Python</strong></title>
     <!-- Styles -->
     
     <link rel="stylesheet" media="print" href="file:///usr/local/lib/python2.7/dist-packages/landslide/themes/default/css/print.css">
@@ -54,10 +54,8 @@
         <div class="slide slide-1">
           <div class="inner">
             
-            <header><h1>Introduction to Recommendation Systems</h1></header>
+            <header><h1>Introduction to Recommendation Systems using <strong>Python</strong></h1></header>
             
-            
-            <section><h2>Using Python</h2></section>
             
           </div>
           <div class="presenter_notes">
@@ -87,11 +85,9 @@
             <header><h1>About Me</h1></header>
             
             
-            <section><ul>
-<li>Senior Data Scientist @ Sokrati, Pune
-** Recently re-branded to onlinesales.ai</li>
-<li>Few workshops in past with Fifth Elephant</li>
-</ul></section>
+            <section><h2>Senior Data Scientist @ Sokrati Technologies, Pune</h2>
+<h3>Recently re-branded to onlinesales.ai</h3>
+<h2>Few workshops in past with Fifth Elephant</h2></section>
             
           </div>
           <div class="presenter_notes">
@@ -260,7 +256,7 @@
             
             
             <section><h2>Vectors in Physics?</h2>
-<h2>Vectors in Maths / Engineering Courses?</h2>
+<h2>Vectors in Mathematics / Engineering courses?</h2>
 <h2>Vectors for working data scientists?</h2></section>
             
           </div>
@@ -269,7 +265,7 @@
             <section>
             
               <ul>
-<li>We studies vectors in one way or the other</li>
+<li>We studied vectors in one way or the other</li>
 <li>Physics: we studied it as quantities which have a direction and scalars as
     quantities which don't have a direction. Largely true but mechanics focussed</li>
 <li>my layman explanation: any quantity which needs 2 or more numbers to 
@@ -378,7 +374,7 @@
 <span class="n">np</span><span class="o">.</span><span class="n">array_equal</span><span class="p">(</span><span class="n">res_3_1</span><span class="p">,</span> <span class="n">res_3_2</span><span class="p">)</span>
 </pre></div>
 </td></tr></table>
-<h2>What happens to the axis?</h2></section>
+<h2>What happens to the axes?</h2></section>
             
           </div>
           <div class="presenter_notes">
@@ -405,7 +401,7 @@
         <div class="slide slide-10">
           <div class="inner">
             
-            <header><h1>Matrix : Encode a linear operation/function/map over vectors efficiently</h1></header>
+            <header><h1>Matrix : Efficiently encode a linear operation / function / map over vectors</h1></header>
             
             
           </div>
@@ -464,23 +460,11 @@
             <header><h1>Big Picture of Recommendations</h1></header>
             
             
-            <section><ol>
-<li>
-<p>Represent</p>
-</li>
-<li>
-<p>Look for friends</p>
-</li>
-<li>
-<p>Optionally, look for their tastes</p>
-</li>
-<li>
-<p>Store friendship graph</p>
-</li>
-<li>
-<p>Lookup and Serve</p>
-</li>
-</ol></section>
+            <section><h2>Represent</h2>
+<h2>Look for friends</h2>
+<h2>Optionally, look for their tastes</h2>
+<h2>Store friendship graph</h2>
+<h2>Lookup and serve</h2></section>
             
           </div>
           <div class="presenter_notes">
@@ -655,7 +639,7 @@
         <div class="slide has_code slide-16">
           <div class="inner">
             
-            <header><h1>Working Example Content</h1></header>
+            <header><h1>Working Example: Content Based</h1></header>
             
             
             <section><h2>Build Neighbours</h2>
@@ -720,7 +704,7 @@
         <div class="slide has_code slide-17">
           <div class="inner">
             
-            <header><h1>Working Example: Collborative Filtering</h1></header>
+            <header><h1>Working Example: Collaborative Filtering</h1></header>
             
             
             <section><h2>Represent Content</h2>
@@ -793,7 +777,7 @@
         <div class="slide slide-18">
           <div class="inner">
             
-            <header><h1>Working Example Collaborative Filtering</h1></header>
+            <header><h1>Working Example: Collaborative Filtering</h1></header>
             
             
             <section><h2>Build Neighbours</h2>
@@ -801,8 +785,8 @@
 <h2>Lookup</h2>
 <ul>
 <li>Looking up is not enough!</li>
-<li>Maintain set of liked movies for neighbors</li>
-<li>Set difference between neighbors liked movies and current users</li>
+<li>Maintain set of movies liked by each neighbour</li>
+<li>Set difference between movies liked by neighbour and movies liked by current user</li>
 </ul></section>
             
           </div>
@@ -896,7 +880,7 @@
             
             <section><h2>Redundancy in Data, Compression</h2>
 <h2>Handling Implicit Feedback</h2>
-<h2>What Metric To Optimize?</h2>
+<h2>Which Metric To Optimize?</h2>
 <h2>Handle Cold Start With Implicit Feedback</h2>
 <h2>Brain Explosion!</h2></section>
             
@@ -957,7 +941,7 @@
             
             
             <section><h2>Singular Value Decomposition</h2>
-<h2>Netflix competition (Simon Funk et. al.)</h2>
+<h2>Netflix Competition (Simon Funk et. al.)</h2>
 <h2>Scaling SVD Computation</h2></section>
             
           </div>
@@ -1049,7 +1033,7 @@
             
             <section><h2>Preference, not rating</h2>
 <h2>More implicit feedback, higher confidence in preference</h2>
-<h2>Still computing (like) SVD</h2>
+<h2>Still computing (similar to) SVD</h2>
 <h2>Quadratic objective and other mathematical tricks</h2></section>
             
           </div>
@@ -1077,7 +1061,7 @@
         <div class="slide slide-27">
           <div class="inner">
             
-            <header><h1>Solving for Better Objective</h1></header>
+            <header><h1>Which Metric To Optimize?</h1></header>
             
             
           </div>
@@ -1110,7 +1094,7 @@
             
             <section><h2>Interesting Objective Criteria (Stefen Rendle et.al.)</h2>
 <h2>Work on pairs between seen and randomly drawn observations</h2>
-<h2>Still computing (like) SVD</h2>
+<h2>Still computing (similar to) SVD</h2>
 <h2>Bayesian objetive criteria, bootstrap sampling and other mathematical tricks</h2></section>
             
           </div>
@@ -1166,12 +1150,12 @@
         <div class="slide slide-30">
           <div class="inner">
             
-            <header><h1>Metadata Embeddings for Recommendations</h1></header>
+            <header><h1>Metadata Embeddings</h1></header>
             
             
             <section><h2>Hybrid matrix factorization model (Maciej Kula)</h2>
 <h2>Handles cold start well</h2>
-<h2>Brain Explosion!</h2>
+<h2>Brain explosion!</h2>
 <h2>But a readable implementation</h2>
 <h2>Super performant Python implementation</h2></section>
             
@@ -1208,12 +1192,12 @@
 <h3>De-noising of data</h3>
 <h2>Scaling Training Horizontally</h2>
 <h3>Stochastic gradient descent</h3>
-<h3>Alternating Least Squares</h3>
+<h3>Alternating least squares</h3>
 <h2>Scaling Training by Going Deep</h2>
 <h3>Vector instructions on CPU</h3>
 <h3>GPU?</h3>
 <h2>Scaling Lookups</h2>
-<h3>Approximate Nearest Neighbors</h3>
+<h3>Approximate nearest neighbours</h3>
 <h2>Scaling Serving</h2>
 <h3>???</h3></section>
             
@@ -1287,7 +1271,7 @@
             <header><h1>What Should You Care About</h1></header>
             
             
-            <section><h2>Understand basic maths thoroughly</h2>
+            <section><h2>Understand basic mathematics thoroughly</h2>
 <h2>Which modelling trick to use?</h2>
 <h2>Which objective function trick to use?</h2>
 <h2>Do I really have big data?</h2></section>
@@ -1326,19 +1310,19 @@
 </li>
 <li>
 <p>Think hard about the model assumptions</p>
-</li>
+<ul>
 <li>Apache Spark / ALS : repeat interaction with same product, gaussian assumptions</li>
-<li>
-<p>Most of the models : SVD, homogeneous data Vs. heterogeneous data</p>
+<li>Most of the models : SVD, homogeneous data Vs. heterogeneous data</li>
+</ul>
 </li>
 <li>
 <p>Prefer debuggability over cleverness</p>
 </li>
 <li>
-<p>Whenver in doubt (always!) stay away from distributed computation</p>
+<p>Whenever in doubt (always!) stay away from distributed computation</p>
 </li>
 <li>
-<p>Whenver in doubt (almost!) use Python</p>
+<p>Whenever in doubt (almost!) use Python</p>
 </li>
 </ol></section>
             
@@ -1499,7 +1483,7 @@
       <caption>Table of Contents</caption>
       
       <tr id="toc-row-1">
-        <th><a href="#slide1">Introduction to Recommendation Systems</a></th>
+        <th><a href="#slide1">Introduction to Recommendation Systems using <strong>Python</strong></a></th>
         <td><a href="#slide1">1</a></td>
       </tr>
       
@@ -1553,7 +1537,7 @@
       
       
       <tr id="toc-row-10">
-        <th><a href="#slide10">Matrix : Encode a linear operation/function/map over vectors efficiently</a></th>
+        <th><a href="#slide10">Matrix : Efficiently encode a linear operation / function / map over vectors</a></th>
         <td><a href="#slide10">10</a></td>
       </tr>
       
@@ -1589,19 +1573,19 @@
       
       
       <tr id="toc-row-16">
-        <th><a href="#slide16">Working Example Content</a></th>
+        <th><a href="#slide16">Working Example: Content Based</a></th>
         <td><a href="#slide16">16</a></td>
       </tr>
       
       
       <tr id="toc-row-17">
-        <th><a href="#slide17">Working Example: Collborative Filtering</a></th>
+        <th><a href="#slide17">Working Example: Collaborative Filtering</a></th>
         <td><a href="#slide17">17</a></td>
       </tr>
       
       
       <tr id="toc-row-18">
-        <th><a href="#slide18">Working Example Collaborative Filtering</a></th>
+        <th><a href="#slide18">Working Example: Collaborative Filtering</a></th>
         <td><a href="#slide18">18</a></td>
       </tr>
       
@@ -1655,7 +1639,7 @@
       
       
       <tr id="toc-row-27">
-        <th><a href="#slide27">Solving for Better Objective</a></th>
+        <th><a href="#slide27">Which Metric To Optimize?</a></th>
         <td><a href="#slide27">27</a></td>
       </tr>
       
@@ -1673,7 +1657,7 @@
       
       
       <tr id="toc-row-30">
-        <th><a href="#slide30">Metadata Embeddings for Recommendations</a></th>
+        <th><a href="#slide30">Metadata Embeddings</a></th>
         <td><a href="#slide30">30</a></td>
       </tr>
       

@@ -1,14 +1,16 @@
-# Introduction to Recommendation Systems
-
-## Using Python
+# Introduction to Recommendation Systems using __Python__
 
 ---
 
 # About Me
 
-* Senior Data Scientist @ Sokrati, Pune
-** Recently re-branded to onlinesales.ai
-* Few workshops in past with Fifth Elephant
+
+## Senior Data Scientist @ Sokrati Technologies, Pune
+
+### Recently re-branded to onlinesales.ai
+
+
+## Few workshops in past with Fifth Elephant
 
 ---
 
@@ -57,13 +59,13 @@
 
 ## Vectors in Physics?
 
-## Vectors in Maths / Engineering Courses?
+## Vectors in Mathematics / Engineering courses?
 
 ## Vectors for working data scientists?
 
 # Presenter Notes
 
-  - We studies vectors in one way or the other
+  - We studied vectors in one way or the other
   - Physics: we studied it as quantities which have a direction and scalars as
     quantities which don't have a direction. Largely true but mechanics focussed
   - my layman explanation: any quantity which needs 2 or more numbers to 
@@ -110,11 +112,11 @@
     print res_3_2
     np.array_equal(res_3_1, res_3_2)
 
-## What happens to the axis?
+## What happens to the axes?
 
 ---
 
-# Matrix : Encode a linear operation/function/map over vectors efficiently
+# Matrix : Efficiently encode a linear operation / function / map over vectors
 
 ---
 
@@ -124,14 +126,15 @@
 
 # Big Picture of Recommendations
 
-1. Represent
+## Represent
 
-2. Look for friends
-  * Optionally, look for their tastes
+## Look for friends
 
-3. Store friendship graph
+## Optionally, look for their tastes
 
-4. Lookup and Serve
+## Store friendship graph
+
+## Lookup and serve
 
 ---
 
@@ -193,7 +196,7 @@
     
 ---
 
-# Working Example Content
+# Working Example: Content Based
 
 ## Build Neighbours
 
@@ -221,7 +224,7 @@
 
 ---
 
-# Working Example: Collborative Filtering
+# Working Example: Collaborative Filtering
 
 ## Represent Content
 
@@ -253,7 +256,7 @@
     
 ---
 
-# Working Example Collaborative Filtering
+# Working Example: Collaborative Filtering
 
 ## Build Neighbours
 
@@ -262,8 +265,8 @@ You know the drill!
 ## Lookup
 
   * Looking up is not enough!
-  * Maintain set of liked movies for neighbors
-  * Set difference between neighbors liked movies and current users
+  * Maintain set of movies liked by each neighbour
+  * Set difference between movies liked by neighbour and movies liked by current user
 
 ---
 
@@ -291,7 +294,7 @@ Going superfast for next few slides!
 ## Handling Implicit Feedback
 
 
-## What Metric To Optimize?
+## Which Metric To Optimize?
 
 
 ## Handle Cold Start With Implicit Feedback
@@ -310,7 +313,7 @@ Going superfast for next few slides!
 ## Singular Value Decomposition
 
 
-## Netflix competition (Simon Funk et. al.)
+## Netflix Competition (Simon Funk et. al.)
 
 
 ## Scaling SVD Computation
@@ -335,14 +338,14 @@ Going superfast for next few slides!
 ## More implicit feedback, higher confidence in preference
 
 
-## Still computing (like) SVD
+## Still computing (similar to) SVD
 
 
 ## Quadratic objective and other mathematical tricks
 
 ---
 
-# Solving for Better Objective
+# Which Metric To Optimize?
 
 ---
 
@@ -355,7 +358,7 @@ Going superfast for next few slides!
 ## Work on pairs between seen and randomly drawn observations
 
 
-## Still computing (like) SVD
+## Still computing (similar to) SVD
 
 
 ## Bayesian objetive criteria, bootstrap sampling and other mathematical tricks
@@ -366,7 +369,7 @@ Going superfast for next few slides!
 
 ---
 
-# Metadata Embeddings for Recommendations
+# Metadata Embeddings 
 
 
 ## Hybrid matrix factorization model (Maciej Kula)
@@ -375,7 +378,7 @@ Going superfast for next few slides!
 ## Handles cold start well
 
 
-## Brain Explosion!
+## Brain explosion!
 
 
 ## But a readable implementation
@@ -399,7 +402,7 @@ Going superfast for next few slides!
 
 ### Stochastic gradient descent
 
-### Alternating Least Squares
+### Alternating least squares
 
 
 ## Scaling Training by Going Deep
@@ -411,7 +414,7 @@ Going superfast for next few slides!
 
 ## Scaling Lookups
 
-### Approximate Nearest Neighbors
+### Approximate nearest neighbours
 
 
 ## Scaling Serving
@@ -434,7 +437,7 @@ Going superfast for next few slides!
     
 # What Should You Care About
 
-## Understand basic maths thoroughly
+## Understand basic mathematics thoroughly
 
 
 ## Which modelling trick to use?
@@ -449,21 +452,17 @@ Going superfast for next few slides!
 
 # Old School Data Scientist's Advice
 
-
 1. De-noise your data first
 
-
 2. Think hard about the model assumptions
-  * Apache Spark / ALS : repeat interaction with same product, gaussian assumptions
-  * Most of the models : SVD, homogeneous data Vs. heterogeneous data
+    * Apache Spark / ALS : repeat interaction with same product, gaussian assumptions
+    * Most of the models : SVD, homogeneous data Vs. heterogeneous data
 
 3. Prefer debuggability over cleverness
 
+4. Whenever in doubt (always!) stay away from distributed computation
 
-4. Whenver in doubt (always!) stay away from distributed computation
-
-
-5. Whenver in doubt (almost!) use Python
+5. Whenever in doubt (almost!) use Python
 
 ---
 
@@ -486,14 +485,17 @@ Going superfast for next few slides!
 
 ### Gilbert Strang (LA Book)
 
+
 ## Calculus
 
 ### Kalid Azad (Better Explained)
 ### Gilbert Strang (Calculus book)
 
+
 ## Scaling Tricks
 
 ### Read the source code!
+
 
 ## Objective Function Tricks
 
